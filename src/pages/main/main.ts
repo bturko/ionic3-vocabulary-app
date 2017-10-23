@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
 //import { RedditApiService } from '../../providers/reddit-api-service';
-import { VocabularyPage } from '../vocabulary/vocabulary'
+import { VocabularyPage } from '../vocabulary/vocabulary';
+import { LearnPage } from '../learn/learn';
 
 
 @Component({
@@ -25,24 +26,30 @@ export class MainPage {
     this.items = [
       {
         'title': 'Словарь',
-        'icon': 'angular',
+        'icon': 'school',
         'description': 'A powerful',
         'color': '#E63135'
       },
       {
         'title': 'Учить',
-        'icon': 'css3',
+        'icon': 'pie',
         'description': 'The latest version',
         'color': '#0CA9EA'
+      },
+      {
+        'title': 'Статистика',
+        'icon': 'stats',
+        'description': 'The',
+        'color': '#ea6d1e'
       }
     ]
   }
 
   somenewq(){
-    this.navCtrl.push(VocabularyPage, {
-          val: 'asd'
-        }
-    )
+    // this.navCtrl.push(VocabularyPage, {
+    //       val: 'asd'
+    //     }
+    // )
     //$state.go('tab.stateName');
   }
 
@@ -67,14 +74,14 @@ export class MainPage {
     post.imageError = true;
   }
 
-  readPost(post) {
-    let redditUrl = 'https://www.reddit.com/r/';
-    if (post.url.includes(redditUrl)) {
-      this.goToComments(post)
-    } else {
-      this.goToPost(post);
-    }
-  }
+  // readPost(post) {
+    // let redditUrl = 'https://www.reddit.com/r/';
+    // if (post.url.includes(redditUrl)) {
+    //   this.goToComments(post)
+    // } else {
+    //   this.goToPost(post);
+    // }
+  // }
 
   goToComments(post) {
     //this.navCtrl.push(this.commentsPage, {post})
@@ -101,11 +108,16 @@ export class MainPage {
   }
 
   openNavDetailsPage(item) {
-    //this.navCtrl.push(PostsPage, { item: item });
-    // this.navCtrl.push(CommentsPage, {
-    //       val: 'asd'
-    //     }
-    // )
+    switch (item.icon){
+      case "school":
+        this.navCtrl.push(LearnPage, { val: item.icon  })
+        break;
+      case "pie":
+        this.navCtrl.push(VocabularyPage, { val: item.icon  })
+        break;
+
+    }
+
   }
 
 

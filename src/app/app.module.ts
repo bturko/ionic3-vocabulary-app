@@ -1,20 +1,22 @@
-import { NgModule, ErrorHandler } from '@angular/core';
+import { NgModule, ErrorHandler }                   from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
-// import { MomentModule } from 'angular2-moment';
-import { MyVocabularyApp } from './app.component';
-import { BrowserModule } from '@angular/platform-browser';
-//import { NavigationDetailsPage, BasicPage } from './navigation/pages';
-import { MainPage } from '../pages/main/main';
-//import { CommentsPage } from '../pages/comments/comments';
-//import { CommentsList } from '../pages/comments/commentsList/commentsList';
-//import { CuppaDataGridModule } from 'cuppa-ng2-grid/cuppa-ng2-dataGrid';
+// import { MomentModule }                          from 'angular2-moment';
+import { MyVocabularyApp }                          from './app.component';
+import { BrowserModule }                            from '@angular/platform-browser';
+//import { NavigationDetailsPage, BasicPage }       from './navigation/pages';
+import { MainPage }                                 from '../pages/main/main';
+import { VocabularyPage }                           from '../pages/vocabulary/vocabulary';
+import { MyVocabularyPage }                         from '../pages/myvocabulary/myvocabulary';
+import { LearnPage }                                from '../pages/learn/learn';
+
 
 @NgModule({
   declarations: [
     MyVocabularyApp,
-    MainPage/*,
-    CommentsPage,
-    CommentsList*/
+    MainPage,
+    VocabularyPage,
+    MyVocabularyPage,
+    LearnPage
   ],
   imports: [
     IonicModule.forRoot(MyVocabularyApp),
@@ -27,8 +29,10 @@ import { MainPage } from '../pages/main/main';
   bootstrap: [IonicApp],
   entryComponents: [
     MyVocabularyApp,
-    MainPage/*,
-    CommentsPage*/
+    MainPage,
+    VocabularyPage,
+    MyVocabularyPage,
+    LearnPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
