@@ -1,15 +1,12 @@
-import { Component } from '@angular/core';
+import { Component }                from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-
-//import { RedditApiService } from '../../providers/reddit-api-service';
-import { VocabularyPage } from '../vocabulary/vocabulary';
-import { LearnPage } from '../learn/learn';
+import { VocabularyPage }           from '../vocabulary/vocabulary';
+import { LearnPage }                from '../learn/learn';
 
 
 @Component({
   selector: 'page-posts',
-  templateUrl: 'main.html'/*,
-  providers: [RedditApiService]*/
+  templateUrl: 'main.html'
 })
 export class MainPage {
   loadCompleted: boolean = false;
@@ -25,16 +22,16 @@ export class MainPage {
     this.load(this.subreddit);
     this.items = [
       {
-        'title': 'Словарь',
-        'icon': 'school',
-        'description': 'A powerful',
-        'color': '#E63135'
-      },
-      {
         'title': 'Учить',
         'icon': 'pie',
         'description': 'The latest version',
         'color': '#0CA9EA'
+      },
+      {
+        'title': 'Словарь',
+        'icon': 'school',
+        'description': 'A powerful',
+        'color': '#E63135'
       },
       {
         'title': 'Статистика',
@@ -45,16 +42,7 @@ export class MainPage {
     ]
   }
 
-  somenewq(){
-    // this.navCtrl.push(VocabularyPage, {
-    //       val: 'asd'
-    //     }
-    // )
-    //$state.go('tab.stateName');
-  }
-
   load(url?) {
-
     /*this.redditApi.fetch(url).subscribe((posts) => {
       this.posts = posts;
       this.loadCompleted = true;
@@ -109,13 +97,15 @@ export class MainPage {
 
   openNavDetailsPage(item) {
     switch (item.icon){
-      case "school":
-        this.navCtrl.push(LearnPage, { val: item.icon  })
-        break;
       case "pie":
-        this.navCtrl.push(VocabularyPage, { val: item.icon  })
+        this.navCtrl.push(LearnPage, { val: item.icon })
         break;
-
+      case "school":
+        this.navCtrl.push(VocabularyPage, { val: item.icon })
+        break;
+      case "stats":
+        this.navCtrl.push(VocabularyPage, { val: item.icon })
+        break;
     }
 
   }

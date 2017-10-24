@@ -1,8 +1,6 @@
 import { Component }                           from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AlertController }                     from 'ionic-angular';
-import { VocabularyPage }                      from "../vocabulary/vocabulary";
-import { MyVocabularyPage }                    from "../myvocabulary/myvocabulary";
 
 /**
  * Generated class for the LearnPage page.
@@ -18,8 +16,7 @@ import { MyVocabularyPage }                    from "../myvocabulary/myvocabular
 })
 export class LearnPage {
   isAndroid: boolean = false;
-  tab1Root = VocabularyPage;
-  tab2Root = MyVocabularyPage;
+
 
   constructor(public alerCtrl: AlertController, public navCtrl: NavController, public navParams: NavParams) {
   }
@@ -33,7 +30,7 @@ export class LearnPage {
 
   doRadio() {
     let alert = this.alerCtrl.create();
-    alert.setTitle('Lightsaber color');
+    alert.setTitle('Выберите свой уровень знания английского');
 
     alert.addInput({
       type: 'radio',

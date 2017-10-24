@@ -1,0 +1,149 @@
+[
+  {
+    "word": "ant",
+    "translate": "муравей",
+    "level": 5,
+    "transcription": "[ ænt ]",
+    "category": "Животные"
+  },
+  {
+    "word": "antelope",
+    "translate": "антилопа",
+    "level": 2,
+    "transcription": "[ ˈæntɪləʊp ]",
+    "category": "Животные"
+  },
+  {
+    "word": "badger",
+    "translate": "барсук",
+    "level": 6,
+    "transcription": "[ ˈbædʒə ]",
+    "category": "Животные"
+  },
+  {
+    "word": "bat",
+    "translate": "летучая мышь",
+    "level": 5,
+    "transcription": "[ bæt ]",
+    "category": "Животные"
+  },
+  {
+    "word": "bear",
+    "translate": "медведь",
+    "level": 1,
+    "transcription": "[ beə ]",
+    "category": "Животные"
+  },
+  {
+    "word": "beaver",
+    "translate": "бобр",
+    "level": 6,
+    "transcription": "[ ˈbiːvə ]",
+    "category": "Животные"
+  },
+  {
+    "word": "bee",
+    "translate": "пчела",
+    "level": 2,
+    "transcription": "[ biː ]",
+    "category": "Животные"
+  },
+  {
+    "word": "beetle",
+    "translate": "жук",
+    "level": 2,
+    "transcription": "[ ˈbiːtl̩ ]",
+    "category": "Животные"
+  },
+  {
+    "word": "blackbird",
+    "translate": "дрозд",
+    "level": 6,
+    "transcription": "[ ˈblækbɜːd ]",
+    "category": "Животные"
+  },
+  {
+    "word": "budgie",
+    "translate": "волнистый попугай",
+    "level": 7,
+    "transcription": "[ ˈbʌdʒi ]",
+    "category": "Животные"
+  },
+  {
+    "word": "bug",
+    "translate": "клоп",
+    "level": 4,
+    "transcription": "[ bʌɡ ]",
+    "category": "Животные"
+  },
+  {
+    "word": "bull",
+    "translate": "бык",
+    "level": 4,
+    "transcription": "[ bʊl ]",
+    "category": "Животные"
+  },
+  {
+    "word": "butterfly",
+    "translate": "бабочка",
+    "level": 3,
+    "transcription": "[ ˈbʌtəflaɪ ]",
+    "category": "Животные"
+  },
+  {
+    "word": "buzzard",
+    "translate": "канюк",
+    "level": 7,
+    "transcription": "[ ˈbʌzəd ]",
+    "category": "Животные"
+  },
+  {
+    "word": "calf",
+    "translate": "теленок",
+    "level": 6,
+    "transcription": "[ kɑːf ]",
+    "category": "Животные"
+  },
+  {
+    "word": "canary",
+    "translate": "канарейка",
+    "level": 4,
+    "transcription": "[ kəˈneəri ]",
+    "category": "Животные"
+  },
+  {
+    "word": "cat",
+    "translate": "кот",
+    "level": 1,
+    "transcription": "[ kæt ]",
+    "category": "Животные"
+  },
+  {
+    "word": "caterpillar",
+    "translate": "гусеница",
+    "level": 6,
+    "transcription": "[ ˈkætəpɪlə ]",
+    "category": "Животные"
+  },
+  {
+    "word": "chicken",
+    "translate": "цыпленок",
+    "level": 3,
+    "transcription": "[ ˈtʃɪkɪn ]",
+    "category": "Животные"
+  },
+  {
+    "word": "cock",
+    "translate": "петух",
+    "level": 3,
+    "transcription": "[ ˈkɒk ]",
+    "category": "Животные"
+  },
+  {
+    "word": "cockroach",
+    "translate": "таракан",
+    "level": 6,
+    "transcription": "[ ˈkɒkrəʊtʃ ]",
+    "category": "Животные"
+  }
+]
