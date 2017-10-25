@@ -9,4 +9,8 @@
 
 <ion-content padding>
 
+  <div *ngFor='let w of words; trackBy: category;'>
+     {{ w.word }} - {{ w.translate }}
+  </div>
+
 </ion-content>

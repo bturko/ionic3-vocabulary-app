@@ -1,28 +1,53 @@
 import { Component }                           from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AlertController }                     from 'ionic-angular';
-
-/**
- * Generated class for the LearnPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { Http }                                from '@angular/http';
+import { UserService }                         from './user.service';
+import { IUser }                               from './user.types';
 
 @IonicPage()
 @Component({
   selector: 'page-learn',
   templateUrl: 'learn.html',
+  providers: [UserService]
 })
 export class LearnPage {
   isAndroid: boolean = false;
+  scripts = [];
+  user: IUser;
 
-
-  constructor(public alerCtrl: AlertController, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public alerCtrl: AlertController,
+              public navCtrl: NavController,
+              public navParams: NavParams,
+              private http: Http,
+              private userServ: UserService
+) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad LearnPage');
+    //console.log('ionViewDidLoad LearnPage');
+    this.getData();
+  }
+  getData(){
+    this.user = this.userServ.getUser();
+
+    this.http.get('/assets/data/scripts.json')
+        .map((res) => res.json())
+        .subscribe(data => {
+          this.scripts = data;
+          console.log(this.scripts)
+        }, (rej) => {console.error("Could not load local data",rej)});
+
+    switch (this.user.scriptId){
+      case 0:
+          this.doRadio();
+        break;
+      case 1:
+        alert("(script==1)")
+        break;
+    }
+
+
   }
 
   testRadioOpen: boolean;
@@ -35,26 +60,26 @@ export class LearnPage {
     alert.addInput({
       type: 'radio',
       label: 'Новичек',
-      value: 'blue',
+      value: '0',
       checked: true
     });
 
     alert.addInput({
       type: 'radio',
       label: 'Знаю слабо',
-      value: 'green'
+      value: '1'
     });
 
     alert.addInput({
       type: 'radio',
       label: 'Знаю хорошо',
-      value: 'black'
+      value: '2'
     });
 
     alert.addInput({
       type: 'radio',
       label: 'Профи',
-      value: 'black'
+      value: '3'
     });
 
     alert.addButton('Отмена');
@@ -62,8 +87,9 @@ export class LearnPage {
       text: 'Ok',
       handler: data => {
         console.log('Radio data:', data);
-        this.testRadioOpen = false;
-        this.testRadioResult = data;
+        this.user.baseExperience = data;
+        console.log(data);
+        this.user.scriptId = this.userServ.setScriptId( this.user.scriptId++ );
       }
     });
 
