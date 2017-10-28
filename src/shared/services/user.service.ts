@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import { IUser } from './user.types'
+import { IUser } from '../interfaces/user.interface'
 
 @Injectable()
 export class UserService {
@@ -14,7 +14,9 @@ export class UserService {
     }
 
     setScriptId(scriptId): number {
+        console.log('setScriptId', this.user.scriptId, scriptId)
         this.user.scriptId = scriptId;
+        console.log('setScriptId', this.user.scriptId)
         return this.user.scriptId;
     }
 }

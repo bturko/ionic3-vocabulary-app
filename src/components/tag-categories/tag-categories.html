@@ -1,0 +1,14 @@
+<!-- Generated template for the TagCategoriesComponent component -->
+<div>
+  {{text}}
+</div>
+<ion-list>
+  <ion-item *ngFor="let cat of categories">
+    <ion-thumbnail item-start>
+      <img src="assets/imgs/{{cat.imgPath}}">
+    </ion-thumbnail>
+    <h2>{{cat.name}}</h2>
+    <p></p>
+    <button ion-button clear item-end>Учить</button>
+  </ion-item>
+</ion-list>

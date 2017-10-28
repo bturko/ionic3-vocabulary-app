@@ -9,6 +9,7 @@ import { AppVocabularyPage }                        from '../pages/vocabulary/ap
 import { MyVocabularyPage }                         from '../pages/vocabulary/myvocabulary/myvocabulary';
 import { LearnPage }                                from '../pages/learn/learn';
 import { HttpModule }                               from '@angular/http';
+import { TagCategoriesComponent }                   from '../components/tag-categories/tag-categories';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { HttpModule }                               from '@angular/http';
     VocabularyPage,
     AppVocabularyPage,
     MyVocabularyPage,
-    LearnPage
+    LearnPage,
+    TagCategoriesComponent
   ],
   imports: [
     IonicModule.forRoot(MyVocabularyApp),
