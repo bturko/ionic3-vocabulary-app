@@ -1,0 +1,14 @@
+<ion-toolbar>
+  <ion-title>Игра {{seconds}}</ion-title>
+  <ion-buttons start>
+    <button ion-button icon-only color="royal"></button>
+    <ion-icon name="pause"></ion-icon>
+  </ion-buttons>
+</ion-toolbar>
+
+<ion-item-group>
+  <ion-item-divider color="light">Кот</ion-item-divider>
+  <ion-item (click)="choose(1)">Cat</ion-item>
+  <ion-item>Dog</ion-item>
+  <ion-item>Mouse</ion-item>
+</ion-item-group>

@@ -4,5 +4,5 @@ export interface IWord {
     transcription: string,
     lang: string,
     transLang: string,
-    categoryTags: number[]
+    categoryTags: string[]
 }

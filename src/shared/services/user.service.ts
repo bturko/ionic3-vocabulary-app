@@ -1,5 +1,5 @@
-import {Injectable} from '@angular/core';
-import { IUser } from '../interfaces/user.interface'
+import { Injectable } from '@angular/core';
+import { IUser }      from '../interfaces/user.interface'
 
 @Injectable()
 export class UserService {

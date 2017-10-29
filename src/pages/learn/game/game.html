@@ -8,5 +8,8 @@
 
 
 <ion-content padding>
-  <badge></badge>
+
+  <tag-badge *ngIf="!showGame" (onChanged)="onChanged($event)"></tag-badge>
+  <tag-game1 *ngIf="showGame"></tag-game1>
+
 </ion-content>

@@ -1,12 +1,5 @@
-import { Component } from '@angular/core';
+import { Component }                           from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the GamePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -14,12 +7,17 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'game.html',
 })
 export class GamePage {
+  showGame: boolean = false;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad GamePage');
+    //console.log('ionViewDidLoad GamePage');
+  }
+
+  onChanged(val: boolean){
+    this.showGame = val;
   }
 
 }

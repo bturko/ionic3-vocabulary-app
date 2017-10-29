@@ -12,10 +12,10 @@ import { LearnPage }                                from '../pages/learn/learn';
 import { GamePage }                                 from '../pages/learn/game/game';
 /* cpmponents */
 import { TagCategoriesComponent }                   from '../components/tag-categories/tag-categories';
-import { BadgeComponent }                           from '../components/badge/badge';
+import { TagBadgeComponent }                        from '../components/tag-badge/tag-badge';
+import { TagGame1Component }                        from '../components/tag-game1/tag-game1';
 /* pipes */
 import { MyFilterPipe }                             from '../components/tag-categories/cat.pipe';
-
 
 @NgModule({
   declarations: [
@@ -27,7 +27,8 @@ import { MyFilterPipe }                             from '../components/tag-cate
     LearnPage,
     GamePage,
     TagCategoriesComponent,
-    BadgeComponent,
+    TagBadgeComponent,
+    TagGame1Component,
     MyFilterPipe
   ],
   imports: [
