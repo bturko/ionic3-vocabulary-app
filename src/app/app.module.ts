@@ -2,14 +2,20 @@ import { NgModule, ErrorHandler }                   from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyVocabularyApp }                          from './app.component';
 import { BrowserModule }                            from '@angular/platform-browser';
-//import { NavigationDetailsPage, BasicPage }       from './navigation/pages';
+import { HttpModule }                               from '@angular/http';
+/* pages */
 import { MainPage }                                 from '../pages/main/main';
 import { VocabularyPage }                           from '../pages/vocabulary/vocabulary';
 import { AppVocabularyPage }                        from '../pages/vocabulary/appvocabulary/appvocabulary';
 import { MyVocabularyPage }                         from '../pages/vocabulary/myvocabulary/myvocabulary';
 import { LearnPage }                                from '../pages/learn/learn';
-import { HttpModule }                               from '@angular/http';
+import { GamePage }                                 from '../pages/learn/game/game';
+/* cpmponents */
 import { TagCategoriesComponent }                   from '../components/tag-categories/tag-categories';
+import { BadgeComponent }                           from '../components/badge/badge';
+/* pipes */
+import { MyFilterPipe }                             from '../components/tag-categories/cat.pipe';
+
 
 @NgModule({
   declarations: [
@@ -19,7 +25,10 @@ import { TagCategoriesComponent }                   from '../components/tag-cate
     AppVocabularyPage,
     MyVocabularyPage,
     LearnPage,
-    TagCategoriesComponent
+    GamePage,
+    TagCategoriesComponent,
+    BadgeComponent,
+    MyFilterPipe
   ],
   imports: [
     IonicModule.forRoot(MyVocabularyApp),
@@ -33,7 +42,8 @@ import { TagCategoriesComponent }                   from '../components/tag-cate
     VocabularyPage,
     AppVocabularyPage,
     MyVocabularyPage,
-    LearnPage
+    LearnPage,
+    GamePage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })

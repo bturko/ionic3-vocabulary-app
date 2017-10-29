@@ -1,9 +1,12 @@
 import { NgModule } from '@angular/core';
 import { TagCategoriesComponent } from './tag-categories/tag-categories';
+import { BadgeComponent } from './badge/badge';
 
 @NgModule({
-	declarations: [TagCategoriesComponent],
+	declarations: [TagCategoriesComponent,
+    BadgeComponent],
 	imports: [],
-	exports: [TagCategoriesComponent]
+	exports: [TagCategoriesComponent,
+    BadgeComponent]
 })
 export class ComponentsModule {}
