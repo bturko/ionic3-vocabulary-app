@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {IGame} from "../../shared/interfaces/game.interface";
+
 
 @Component({
   selector: 'tag-game1',
@@ -6,19 +8,34 @@ import { Component } from '@angular/core';
 })
 export class TagGame1Component {
 
-  seconds: number = 30;
+  seconds: number = 14;
+  gameResults: boolean = false;
+  intv: any;
+  game: IGame;
 
   constructor() {
-    console.log('Hello TagGame1Component Component');
+    //console.log('Hello TagGame1Component Component');
+    this.game = {
+      question: "Mouse",
+      answers: [
+        {word: "Мышь"},
+        {word: "Лев"},
+        {word: "Дракон"}
+      ],
+      rightAnswer: 1
+    }
 
-    setInterval(function(){
+    this.intv = setInterval(()=>{
       --this.seconds;
-      console.log(this.seconds)
+      if(this.seconds < 1) {
+        this.gameResults = true;
+        clearInterval(this.intv);
+      }
     }, 1000)
   }
 
   choose(id){
-    alert(id + "choosed")
+    //alert(id + "choosed")
   }
 
   ionViewDidLoad() {

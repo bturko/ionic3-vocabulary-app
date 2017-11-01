@@ -6,9 +6,15 @@
   </ion-buttons>
 </ion-toolbar>
 
-<ion-item-group>
-  <ion-item-divider color="light">Кот</ion-item-divider>
-  <ion-item (click)="choose(1)">Cat</ion-item>
-  <ion-item>Dog</ion-item>
-  <ion-item>Mouse</ion-item>
+<ion-item-group *ngIf="seconds > 0">
+  <ion-item-divider color="light">{{game.question}}</ion-item-divider>
+  <ion-item *ngFor="let a of game.answers">
+    <span (click)="choose($index)">{{a.word}}</span>
+  </ion-item>
+
 </ion-item-group>
+
+<div *ngIf="seconds < 1">
+  Результаты:<bR>
+
+</div>

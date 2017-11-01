@@ -3,6 +3,7 @@ export interface IWord {
     translation: string,
     transcription: string,
     lang: string,
+    level: number,
     transLang: string,
-    categoryTags: string[]
+    category: string
 }

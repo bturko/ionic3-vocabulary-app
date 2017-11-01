@@ -14,9 +14,7 @@ export class UserService {
     }
 
     setScriptId(scriptId): number {
-        console.log('setScriptId', this.user.scriptId, scriptId)
         this.user.scriptId = scriptId;
-        console.log('setScriptId', this.user.scriptId)
         return this.user.scriptId;
     }
 }

@@ -13,8 +13,9 @@ export class TagBadgeComponent {
   currWords: IWord[];
 
   constructor(private wordsService: WordsService) {
-    this.wordsService.getFromCategory("Животные").then(data => {
+    this.wordsService.getFromCategory("Животные", 1).then(data => {
        this.currWords = data;
+       //console.log('cWords', this.currWords)
     });
   }
 
