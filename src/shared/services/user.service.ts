@@ -13,8 +13,13 @@ export class UserService {
         return this.user;
     }
 
-    setScriptId(scriptId): number {
+    setScriptId(scriptId:number): number {
         this.user.scriptId = scriptId;
         return this.user.scriptId;
+    }
+
+    setBaseExperience(expLevel: number): void{
+        console.log('set', expLevel)
+        this.user.baseExperience = expLevel;
     }
 }

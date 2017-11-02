@@ -36,7 +36,6 @@ export class LearnPage {
         .map((res) => res.json())
         .subscribe(data => {
           this.scripts = data;
-          //console.log(this.scripts)
         }, (rej) => {console.error("Could not load local data",rej)});
     this.nextScript();
   }
@@ -45,9 +44,8 @@ export class LearnPage {
   testRadioResult;
 
   nextScript(){
-    //console.log(this.user.scriptId)
     this.user.scriptId = this.userServ.setScriptId( ++this.user.scriptId );
-    console.log(this.user.scriptId);
+
     switch (this.user.scriptId){
       case 1:
         this.doRadio();
@@ -97,7 +95,6 @@ export class LearnPage {
         this.navCtrl.push(MainPage, { })
         //console.log('Radio data:', data);
         //this.user.baseExperience = data;
-        //console.log(data);
         //this.user.scriptId = this.userServ.setScriptId( this.user.scriptId++ );
       }
     });
@@ -105,7 +102,7 @@ export class LearnPage {
       text: 'Ok',
       handler: data => {
         //console.log('Radio data:', data);
-        this.user.baseExperience = data;
+        this.userServ.setBaseExperience(data);
         //console.log(data);
         this.nextScript();
       }

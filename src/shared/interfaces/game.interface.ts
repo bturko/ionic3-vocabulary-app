@@ -1,7 +1,7 @@
+import { IWord }    from "../../shared/interfaces/word.interface";
+
 export interface IGame {
     question: string,
-    answers: [{
-        word: string
-    }],
+    answers: IWord[],
     rightAnswer: number
 }

@@ -19,7 +19,6 @@ export class TagCategoriesComponent {
         .map((res) => res.json())
         .subscribe(data => {
           this.categories = data;
-          console.log( this.categories )
         }, (rej) => {console.error("Could not load local data",rej)});
   }
 
