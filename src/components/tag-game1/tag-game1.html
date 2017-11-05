@@ -8,7 +8,7 @@
 
 <ion-item-group *ngIf="seconds > 0">
   <ion-item-divider color="light">{{game.question}}</ion-item-divider>
-  <ion-item *ngFor="let a of game.answers">
+  <ion-item *ngFor="let a of game.answers; index as $index">
     <span (click)="choose($index)">{{a.text}}</span>
   </ion-item>
 

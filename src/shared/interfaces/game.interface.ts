@@ -1,7 +1,8 @@
-import { IWord }    from "../../shared/interfaces/word.interface";
+import { IQuestion } from "./question.interface";
 
 export interface IGame {
-    question: string,
-    answers: IWord[],
-    rightAnswer: number
+    questions: IQuestion[],
+    rightAnswerCount: number,
+    askedCount: number,
+    seconds: number
 }
