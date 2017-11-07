@@ -17,6 +17,8 @@ import { TagGame1Component }                        from '../components/tag-game
 /* pipes */
 import { MyFilterPipe }                             from '../components/tag-categories/cat.pipe';
 
+import { InAppBrowser }                             from '@ionic-native/in-app-browser';
+
 @NgModule({
   declarations: [
     MyVocabularyApp,
@@ -46,6 +48,9 @@ import { MyFilterPipe }                             from '../components/tag-cate
     LearnPage,
     GamePage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [
+    InAppBrowser,
+    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    ]
 })
 export class AppModule {}

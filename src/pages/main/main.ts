@@ -2,6 +2,8 @@ import { Component }                from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { VocabularyPage }           from '../vocabulary/vocabulary';
 import { LearnPage }                from '../learn/learn';
+import { InAppBrowser,
+         InAppBrowserOptions }      from '@ionic-native/in-app-browser';
 
 
 @Component({
@@ -9,46 +11,58 @@ import { LearnPage }                from '../learn/learn';
   templateUrl: 'main.html'
 })
 export class MainPage {
+
   loadCompleted: boolean = false;
   subreddit;
-  //anotherPage: CommentsPage;
-
-  posts: Array<any>;
-  //commentsPage = CommentsPage;
   items = [];
+  browser;
+  options : InAppBrowserOptions = {
+    location : 'yes',
+    hidden : 'no',
+    clearcache : 'yes',
+    clearsessioncache : 'yes',
+    zoom : 'yes',//Android only ,shows browser zoom controls
+    hardwareback : 'yes',
+    mediaPlaybackRequiresUserAction : 'no',
+    shouldPauseOnSuspend : 'no', //Android only
+    closebuttoncaption : 'Close', //iOS only
+    disallowoverscroll : 'no', //iOS only
+    toolbar : 'yes', //iOS only
+    enableViewportScale : 'no', //iOS only
+    allowInlineMediaPlayback : 'no',//iOS only
+    presentationstyle : 'pagesheet',//iOS only
+    fullscreen : 'yes',//Windows only
+  };
 
-  constructor(public navCtrl: NavController/*, public redditApi: RedditApiService*/, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private theInAppBrowser: InAppBrowser) {
     this.subreddit = this.navParams.get('subreddit');
-    this.load(this.subreddit);
     this.items = [
       {
         'title': 'Учить',
         'icon': 'pie',
-        'description': 'The latest version',
+        'description': '',
         'color': '#0CA9EA'
       },
       {
         'title': 'Словарь',
         'icon': 'school',
-        'description': 'A powerful',
+        'description': 'l',
         'color': '#E63135'
       },
       {
         'title': 'Статистика',
         'icon': 'stats',
-        'description': 'The',
+        'description': '',
+        'color': '#ea6d1e'
+      },
+      {
+        'title': 'Полная версия',
+        'icon': 'cloud',
+        'description': '',
         'color': '#ea6d1e'
       }
     ]
-  }
-
-  load(url?) {
-    /*this.redditApi.fetch(url).subscribe((posts) => {
-      this.posts = posts;
-      this.loadCompleted = true;
-      console.log(posts)
-    })*/
-  }
+ }
 
   getPostImage(post) {
    let postImage = '';
@@ -62,18 +76,6 @@ export class MainPage {
     post.imageError = true;
   }
 
-  // readPost(post) {
-    // let redditUrl = 'https://www.reddit.com/r/';
-    // if (post.url.includes(redditUrl)) {
-    //   this.goToComments(post)
-    // } else {
-    //   this.goToPost(post);
-    // }
-  // }
-
-  goToComments(post) {
-    //this.navCtrl.push(this.commentsPage, {post})
-  }
 
   goToPost(post) {
     window.open(post.url, '_blank');
@@ -83,17 +85,14 @@ export class MainPage {
     this.navCtrl.push(MainPage, {subreddit})
   }
 
-  loadMore(infiniteScroll) {
-    let lastPost = this.posts[this.posts.length - 1];
-    if (!lastPost) {
-      infiniteScroll.complete()
-    } else {
-      /*this.redditApi.fetchNext(lastPost.name, this.subreddit).subscribe((posts) => {
-        this.posts = this.posts.concat(posts);
-        infiniteScroll.complete();
-      })*/
-    }
-  }
+  // loadMore(infiniteScroll) {
+  //   let lastPost = this.posts[this.posts.length - 1];
+  //   if (!lastPost) {
+  //     infiniteScroll.complete()
+  //   } else {
+  //
+  //   }
+  // }
 
   openNavDetailsPage(item) {
     switch (item.icon){
@@ -106,9 +105,24 @@ export class MainPage {
       case "stats":
         this.navCtrl.push(VocabularyPage, { val: item.icon })
         break;
+      case "cloud":
+        this.openWithInAppBrowser("http://i.ua/");
+        break;
     }
 
   }
 
+  public openWithSystemBrowser(url : string){
+    let target = "_system";
+    this.theInAppBrowser.create(url,target,this.options);
+  }
+  public openWithInAppBrowser(url : string){
+    let target = "_blank";
+    this.theInAppBrowser.create(url,target,this.options);
+  }
+  public openWithCordovaBrowser(url : string){
+    let target = "_self";
+    this.theInAppBrowser.create(url,target,this.options);
+  }
 
 }

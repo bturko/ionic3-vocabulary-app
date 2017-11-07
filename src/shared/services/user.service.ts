@@ -6,7 +6,8 @@ export class UserService {
     user = {
         wordsLevel: 0,
         scriptId: 0,
-        baseExperience: 0
+        baseExperience: 0,
+        availableCategories: []
     };
 
     getUser(): IUser {
@@ -19,7 +20,10 @@ export class UserService {
     }
 
     setBaseExperience(expLevel: number): void{
-        console.log('set', expLevel)
         this.user.baseExperience = expLevel;
+    }
+
+    setAvailableCategories(cats: number[]): void{
+        this.user.availableCategories = cats;
     }
 }
