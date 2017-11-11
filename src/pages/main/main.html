@@ -11,18 +11,20 @@
 
 
 <ion-menu class="side-menu" type="overlay" [content]="postsList">
+
+
   <ion-header>
     <ion-toolbar color="primary">
-      <ion-title>Choose subreddit</ion-title>
+      <ion-title>Choose</ion-title>
     </ion-toolbar>
   </ion-header>
 
   <ion-content>
     <ion-item>
-      <ion-label color="primary" floating>Go to page</ion-label>
-      <ion-input #subredditInput></ion-input>
+      <ion-avatar item-left>
+        <ion-img [src]="image"></ion-img>
+      </ion-avatar>
     </ion-item>
-    <button class="menu-go-button" ion-button (click)="goToSubreddit(subredditInput.value)" block>Go</button>
   </ion-content>
 
 </ion-menu>

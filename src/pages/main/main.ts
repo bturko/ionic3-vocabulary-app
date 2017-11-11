@@ -33,9 +33,12 @@ export class MainPage {
     presentationstyle : 'pagesheet',//iOS only
     fullscreen : 'yes',//Windows only
   };
+  image;
+  fullAppUrl: string = "http://google.com/";
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private theInAppBrowser: InAppBrowser) {
-    this.subreddit = this.navParams.get('subreddit');
+    //this.subreddit = this.navParams.get('subreddit');
+    this.image = 'https://randomuser.me/api/portraits/women/79.jpg';
     this.items = [
       {
         'title': 'Учить',
@@ -106,7 +109,7 @@ export class MainPage {
         this.navCtrl.push(VocabularyPage, { val: item.icon })
         break;
       case "cloud":
-        this.openWithInAppBrowser("http://i.ua/");
+        this.openWithInAppBrowser(this.fullAppUrl);
         break;
     }
 

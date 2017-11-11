@@ -18,6 +18,8 @@ import { TagGame1Component }                        from '../components/tag-game
 import { MyFilterPipe }                             from '../components/tag-categories/cat.pipe';
 
 import { InAppBrowser }                             from '@ionic-native/in-app-browser';
+import { NativeStorage }                            from '@ionic-native/native-storage';
+import { Toast }                                    from '@ionic-native/toast';
 
 @NgModule({
   declarations: [
@@ -50,6 +52,8 @@ import { InAppBrowser }                             from '@ionic-native/in-app-b
   ],
   providers: [
     InAppBrowser,
+    NativeStorage,
+    Toast,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
     ]
 })

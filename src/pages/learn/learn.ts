@@ -5,6 +5,8 @@ import { Http }                                from '@angular/http';
 import { UserService }                         from '../../shared/services/user.service';
 import { IUser }                               from '../../shared/interfaces/user.interface';
 import { MainPage }                            from "../main/main";
+import { NativeStorage }                       from '@ionic-native/native-storage';
+import { Toast }                               from '@ionic-native/toast';
 
 @IonicPage()
 @Component({
@@ -17,17 +19,20 @@ export class LearnPage {
   scripts = [];
   user: IUser;
   showGame: boolean = false;
+  DataArray: Array<string> = [];
 
   constructor(public alerCtrl: AlertController,
               public navCtrl: NavController,
               public navParams: NavParams,
               private http: Http,
-              private userServ: UserService
+              private userService: UserService,
+              private nativeStorage: NativeStorage,
+              private toast: Toast
 ) {
   }
 
   ionViewDidLoad() {
-    this.user = this.userServ.getUser();
+    this.user = this.userService.getUser();
     this.getData();
   }
 
@@ -44,7 +49,7 @@ export class LearnPage {
   testRadioResult;
 
   nextScript(){
-    this.user.scriptId = this.userServ.setScriptId( ++this.user.scriptId );
+    this.user.scriptId = this.userService.setScriptId( ++this.user.scriptId );
 
     switch (this.user.scriptId){
       case 1:
@@ -93,7 +98,6 @@ export class LearnPage {
       text: 'Отмена',
       handler: data => {
         this.navCtrl.push(MainPage, { })
-        //console.log('Radio data:', data);
         //this.user.baseExperience = data;
         //this.user.scriptId = this.userServ.setScriptId( this.user.scriptId++ );
       }
@@ -101,9 +105,8 @@ export class LearnPage {
     alert.addButton({
       text: 'Ok',
       handler: data => {
-        //console.log('Radio data:', data);
-        this.userServ.setBaseExperience(data);
-        //console.log(data);
+        this.userService.setBaseExperience(data);
+        this.saveStorage();
         this.nextScript();
       }
     });
@@ -113,5 +116,31 @@ export class LearnPage {
     });
   }
 
+  saveStorage(){
+    this.toast.show(`Wait...`, '5000', 'center');
+    this.nativeStorage.setItem('myitem', {property: 'value', anotherProperty: 'anotherValue'})
+        .then(
+            () => {
+              console.log('Stored item!');
+              //this.toast.show(`Stored item!`, '5000', 'center').subscribe(toast => {});
+            },
+            error => {
+              console.error('Error storing item', error);
+              //this.toast.show(`NOT Stored!`, '5000', 'center').subscribe(toast => {});
+            }
+        );
+
+    this.nativeStorage.getItem('myitem')
+        .then(
+            data => {
+              console.log('Stored item!', data)
+              //this.toast.show(`Item! ${data.property}`, '5000', 'center').subscribe(toast => {});
+            },
+            error => {
+                console.log("Can't get item!")
+                //this.toast.show(`Can't get item!`, '5000', 'center').subscribe(toast => {});
+            }
+        );
+  }
 
 }
