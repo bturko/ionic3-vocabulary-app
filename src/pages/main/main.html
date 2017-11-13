@@ -36,7 +36,7 @@
     </ion-card-header>
 
     <ion-list>
-      <button ion-item *ngFor="let item of items" (click)="openNavDetailsPage(item)" icon-start>
+      <button ion-item *ngFor="let item of menuItems" (click)="openNavDetailsPage(item)" icon-start>
         <ion-icon [name]="'md-' + item.icon" [ngStyle]="{'color': item.color}" item-start></ion-icon>
         {{ item.title }}
       </button>

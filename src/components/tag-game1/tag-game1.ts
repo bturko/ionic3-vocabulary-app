@@ -3,7 +3,6 @@ import { IGame }           from "../../shared/interfaces/game.interface";
 import { WordsService }    from "../../shared/services/words.service";
 import { UserService }     from "../../shared/services/user.service";
 import { IUser }           from "../../shared/interfaces/user.interface";
-import { IQuestion }       from "../../shared/interfaces/question.interface";
 import { IQuestionEntity } from "../../shared/types/question.type";
 
 @Component({

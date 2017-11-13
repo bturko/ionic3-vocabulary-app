@@ -9,7 +9,9 @@
     "build": "ionic-app-scripts build",
     "lint": "ionic-app-scripts lint",
     "ionic:build": "ionic-app-scripts build",
-    "ionic:serve": "ionic-app-scripts serve"
+    "ionic:serve": "ionic-app-scripts serve",
+    "docs": "npm run typedoc -- --options typedoc.json --exclude '**/*.spec.ts' ./app/",
+    "typedoc": "typedoc"
   },
   "dependencies": {
     "@angular/common": "4.4.3",
@@ -45,6 +47,7 @@
   },
   "devDependencies": {
     "@ionic/app-scripts": "3.0.0",
+    "typedoc": "^0.9.0",
     "typescript": "2.3.4"
   },
   "cordova": {

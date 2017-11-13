@@ -11,6 +11,10 @@ export class WordsService {
         this.http = http;
     }
 
+    /**
+    * Returns word by id
+     * id: number
+     */
     getWord(id: number):Promise<IWord>{
         return new Promise(resolve => {
             this.http.get('/assets/data/words.json')
@@ -23,7 +27,7 @@ export class WordsService {
     }
 
     /**
-     *
+     * Returns words by Category name
      * @param catTitle
      * @param availLevel
      * @returns {Promise<T>}
@@ -32,7 +36,7 @@ export class WordsService {
         // TODO: refactor this
         if(!this.words){
             return new Promise(resolve => {
-                this.http.get('/assets/data/words.json')
+                this.http.get('./assets/data/words.json')
                     .map((res) => res.json())
                     .subscribe(data => {
                         this.words = data;

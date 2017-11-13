@@ -4,6 +4,7 @@ import { VocabularyPage }           from '../vocabulary/vocabulary';
 import { LearnPage }                from '../learn/learn';
 import { InAppBrowser,
          InAppBrowserOptions }      from '@ionic-native/in-app-browser';
+import { SettingsService }          from "../../shared/services/settings.service";
 
 
 @Component({
@@ -14,7 +15,7 @@ export class MainPage {
 
   loadCompleted: boolean = false;
   subreddit;
-  items = [];
+  menuItems = [];
   browser;
   options : InAppBrowserOptions = {
     location : 'yes',
@@ -36,10 +37,15 @@ export class MainPage {
   image;
   fullAppUrl: string = "http://google.com/";
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private theInAppBrowser: InAppBrowser) {
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams,
+              private theInAppBrowser: InAppBrowser,
+              settingsService: SettingsService
+  ) {
     //this.subreddit = this.navParams.get('subreddit');
     this.image = 'https://randomuser.me/api/portraits/women/79.jpg';
-    this.items = [
+    settingsService.getPlatform();
+    this.menuItems = [
       {
         'title': 'Учить',
         'icon': 'pie',

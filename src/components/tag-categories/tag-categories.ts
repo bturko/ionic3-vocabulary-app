@@ -1,9 +1,9 @@
-import { Component }                from '@angular/core';
-import { ICategory }                from '../../shared/interfaces/category.interface';
-import { GamePage }                 from '../../pages/learn/game/game';
-import { NavController }            from 'ionic-angular';
-import { Http }                     from '@angular/http';
-import { Toast }                    from '@ionic-native/toast';
+import { Component }            from '@angular/core';
+import { ICategory }            from '../../shared/interfaces/category.interface';
+import { GamePage }             from '../../pages/learn/game/game';
+import { NavController }        from 'ionic-angular';
+//import { Toast }                from '@ionic-native/toast';
+import { CategoriesService }    from '../../shared/services/categories.service'
 
 @Component({
   selector: 'tag-categories',
@@ -16,22 +16,12 @@ export class TagCategoriesComponent {
 
   constructor(
       public navCtrl: NavController,
-      private http: Http,
-      private toast: Toast
+      //private toast: Toast,
+      private categoriesService: CategoriesService
   ){
     this.text = 'Доступные категории';
-    this.http.get('/assets/data/categories.json')
-        .map((res) => res.json())
-        .subscribe(data => {
-          this.categories = data;
-        }, (rej) => {
-          //if (this.platform.is('cordova')) {}
-          this.toast.show(`Не удалось прочесть данные`, '5000', 'center').subscribe(
-              toast => {
-                console.error("Не удалось прочесть данные", rej, toast);
-              }
-          );
-        });
+    this.categoriesService.getCategories()
+        .then((categories) => this.categories = categories);
   }
 
   learn() {

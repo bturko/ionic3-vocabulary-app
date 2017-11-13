@@ -1,18 +1,18 @@
 import { Component }                           from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AlertController }                     from 'ionic-angular';
-import { Http }                                from '@angular/http';
 import { UserService }                         from '../../shared/services/user.service';
+import { SettingsService }                     from '../../shared/services/settings.service';
+import { StoreService }                        from '../../shared/services/store.service';
 import { IUser }                               from '../../shared/interfaces/user.interface';
 import { MainPage }                            from "../main/main";
-import { NativeStorage }                       from '@ionic-native/native-storage';
-import { Toast }                               from '@ionic-native/toast';
+
 
 @IonicPage()
 @Component({
   selector: 'page-learn',
   templateUrl: 'learn.html',
-  providers: [UserService]
+  providers: [ UserService, StoreService ]
 })
 export class LearnPage {
   isAndroid: boolean = false;
@@ -24,11 +24,11 @@ export class LearnPage {
   constructor(public alerCtrl: AlertController,
               public navCtrl: NavController,
               public navParams: NavParams,
-              private http: Http,
               private userService: UserService,
-              private nativeStorage: NativeStorage,
-              private toast: Toast
-) {
+              private storeService: StoreService,
+              private settingsService: SettingsService
+  ){
+
   }
 
   ionViewDidLoad() {
@@ -37,11 +37,9 @@ export class LearnPage {
   }
 
   getData(){
-    this.http.get('/assets/data/scripts.json')
-        .map((res) => res.json())
-        .subscribe(data => {
-          this.scripts = data;
-        }, (rej) => {console.error("Could not load local data",rej)});
+    this.settingsService.getScripts().then((scripts) => {
+      this.scripts = scripts;
+    });
     this.nextScript();
   }
 
@@ -106,7 +104,7 @@ export class LearnPage {
       text: 'Ok',
       handler: data => {
         this.userService.setBaseExperience(data);
-        this.saveStorage();
+        this.storeService.saveUserData();
         this.nextScript();
       }
     });
@@ -114,33 +112,6 @@ export class LearnPage {
     alert.present().then(() => {
       this.testRadioOpen = true;
     });
-  }
-
-  saveStorage(){
-    this.toast.show(`Wait...`, '5000', 'center');
-    this.nativeStorage.setItem('myitem', {property: 'value', anotherProperty: 'anotherValue'})
-        .then(
-            () => {
-              console.log('Stored item!');
-              //this.toast.show(`Stored item!`, '5000', 'center').subscribe(toast => {});
-            },
-            error => {
-              console.error('Error storing item', error);
-              //this.toast.show(`NOT Stored!`, '5000', 'center').subscribe(toast => {});
-            }
-        );
-
-    this.nativeStorage.getItem('myitem')
-        .then(
-            data => {
-              console.log('Stored item!', data)
-              //this.toast.show(`Item! ${data.property}`, '5000', 'center').subscribe(toast => {});
-            },
-            error => {
-                console.log("Can't get item!")
-                //this.toast.show(`Can't get item!`, '5000', 'center').subscribe(toast => {});
-            }
-        );
   }
 
 }
