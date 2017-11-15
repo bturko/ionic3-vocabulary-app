@@ -1,36 +1,35 @@
 import { Component }                           from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {Injectable}                            from '@angular/core';
-import { Http }                                from '@angular/http';
-import 'rxjs/add/operator/map';
+import { WordsService }                        from '../../../shared/services/words.service'
+import { IWord }                               from '../../../shared/interfaces/word.interface'
 
 @IonicPage()
 @Component({
   selector: 'page-app-vocabulary',
   templateUrl: 'appvocabulary.html',
+  providers: [WordsService]
 })
 
 @Injectable()
 export class AppVocabularyPage {
-  words;
+  words: IWord[];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private http: Http) {
+  constructor(
+      public navCtrl: NavController,
+      public navParams: NavParams,
+      public wordsService: WordsService
+  ) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad VocabularyPage');
 
-    //this.words = this.http.get('build/json/skills.json').map(res => res.json());
     this.getData();
   }
 
   getData(){
-    this.http.get('assets/data/words.json')
-        .map((res) => res.json())
-        .subscribe(data => {
-          this.words = data;
-          console.log(this.words)
-        }, (rej) => {console.error("Could not load local data",rej)});
+     this.wordsService.getVocabulary().then((words)=>this.words = words)
   }
 
 }

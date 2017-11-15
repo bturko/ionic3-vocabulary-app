@@ -67,7 +67,8 @@
     "translation": "волнистый попугай",
     "level": 7,
     "transcription": "[ ˈbʌdʒi ]",
-    "category": "Животные"
+    "category": "Животные",
+    "status": "enabled"
   },
   {
     "text": "bug",

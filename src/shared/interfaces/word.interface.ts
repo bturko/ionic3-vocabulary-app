@@ -5,5 +5,6 @@ export interface IWord {
     lang: string,
     level: number,
     transLang: string,
-    category: string
+    category: string,
+    status: string // "enabled"-user learnt it
 }
