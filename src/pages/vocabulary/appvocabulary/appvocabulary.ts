@@ -1,6 +1,6 @@
 import { Component }                           from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import {Injectable}                            from '@angular/core';
+import { Injectable }                          from '@angular/core';
 import { WordsService }                        from '../../../shared/services/words.service'
 import { IWord }                               from '../../../shared/interfaces/word.interface'
 

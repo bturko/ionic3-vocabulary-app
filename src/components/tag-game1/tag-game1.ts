@@ -33,13 +33,15 @@ export class TagGame1Component {
     }
     this.curQuestion = {
       words: [{
+        id: 0,
         text: "bull",
         translation: "бык",
         level: 4,
         transcription: "[ bʊl ]",
         category: "Животные",
         lang: "",
-        transLang: ""
+        transLang: "",
+        status: 1
       }],
       rightAnswer: 0
     }
@@ -59,9 +61,12 @@ export class TagGame1Component {
   }
 
   choose(id){
-    if(this.game.questions[this.game.askedCount].rightAnswer == id) this.game.rightAnswerCount++;
+    if(this.game.questions[this.game.askedCount].rightAnswer == id) {
+      this.game.rightAnswerCount++;
+      this.wordService.addKnownWord(this.game.questions[this.game.askedCount].words[id].id);
+    }
     console.log('choose', this.game.rightAnswerCount)
-    this.game.askedCount = this.game.askedCount+1
+    this.game.askedCount = this.game.askedCount + 1
     this.setGame();
   }
 

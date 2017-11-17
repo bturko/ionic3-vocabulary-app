@@ -1,4 +1,5 @@
 export interface IWord {
+    id: number,
     text: string,
     translation: string,
     transcription: string,
@@ -6,5 +7,5 @@ export interface IWord {
     level: number,
     transLang: string,
     category: string,
-    status: string // "enabled"-user learnt it
+    status: number // 1-user learnt it
 }

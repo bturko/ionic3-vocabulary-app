@@ -1,6 +1,7 @@
 import { Injectable }  from '@angular/core';
 import { IWord }       from '../interfaces/word.interface';
 import { Http }        from '@angular/http';
+import { WordsStatus } from '../types/words.type'
 import 'rxjs/add/operator/map';
 
 @Injectable()
@@ -55,7 +56,7 @@ export class WordsService {
                     .map((res) => res.json())
                     .subscribe(data => {
                         this.words = data;
-                        resolve(this.words.filter((w)=> w.status=="enabled"));
+                        resolve(this.words.filter((w)=> w.status == WordsStatus.Enabled));
                     }, (rej) => {console.error("Could not load local data",rej)});
             });
         }
@@ -85,6 +86,10 @@ export class WordsService {
                     resolve(words);
                 }, (rej) => {console.error("Could not load local data",rej)});
         });
+    }
+
+    addKnownWord(wordId: number){
+        this.words[wordId].status = WordsStatus.Enabled;
     }
 
 }
