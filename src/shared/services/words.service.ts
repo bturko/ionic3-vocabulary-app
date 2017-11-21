@@ -1,31 +1,35 @@
-import { Injectable }  from '@angular/core';
-import { IWord }       from '../interfaces/word.interface';
-import { Http }        from '@angular/http';
-import { WordsStatus } from '../types/words.type'
+import { Injectable }       from '@angular/core';
+import { IWord }            from '../interfaces/word.interface';
+import { WordsStatus }      from '../enums/wordstatuses.enum';
+import { HttpWordsService } from '../services/words.http.service';
 import 'rxjs/add/operator/map';
 
 @Injectable()
 export class WordsService {
-    http: Http;
     words: IWord[];
+    httpWordsService: HttpWordsService;
 
-    constructor (http: Http) {
-        this.http = http;
+    constructor (httpWordsService: HttpWordsService) {
+        this.httpWordsService = httpWordsService;
     }
+
+    initWords():Promise<boolean>{
+        return new Promise(resolve => {
+            this.httpWordsService.loadWords().then(words => {
+                this.words = words;
+                resolve(true);
+            }, (rej) => {console.error("Could not load local data",rej)});
+        });
+    }
+
 
     /**
     * Returns word by id
      * id: number
      */
-    getWord(id: number):Promise<IWord>{
-        return new Promise(resolve => {
-            this.http.get('/assets/data/words.json')
-                .map((res) => res.json())
-                .subscribe(data => {
-                    this.words = data;
-                    resolve(this.words.filter((w)=> w.text == "butterfly"));
-                }, (rej) => {console.error("Could not load local data",rej)});
-        });
+    getWord(id: number):IWord{
+        let word: any = this.words.filter((w)=> w.id == id);
+        return word;
     }
 
     /**
@@ -34,27 +38,15 @@ export class WordsService {
      * @param availLevel
      * @returns {Promise<T>}
      */
-    getFromCategory(catTitle: string, availLevel: number):Promise<IWord[]>{
-        // TODO: refactor this
-        if(!this.words){
-            return new Promise(resolve => {
-                this.http.get('./assets/data/words.json')
-                    .map((res) => res.json())
-                    .subscribe(data => {
-                        this.words = data;
-                        resolve(this.words.filter((w)=> w.category == catTitle && w.level<=availLevel));
-                        }, (rej) => {console.error("Could not load local data",rej)});
-            });
-        }
+    getFromCategory(catTitle: string, availLevel: number):IWord[]{
+       return this.words.filter((w)=> w.category == catTitle && w.level <= availLevel);
     }
 
     getVocabulary():Promise<IWord[]>{
         // TODO: refactor this
         if(!this.words){
             return new Promise(resolve => {
-                this.http.get('./assets/data/words.json')
-                    .map((res) => res.json())
-                    .subscribe(data => {
+                this.httpWordsService.loadWords().then(data => {
                         this.words = data;
                         resolve(this.words.filter((w)=> w.status == WordsStatus.Enabled));
                     }, (rej) => {console.error("Could not load local data",rej)});
@@ -62,34 +54,40 @@ export class WordsService {
         }
     }
 
+    getCustomVocabulary():IWord[]{
+        console.log('getCustomVocabulary', this.words)
+        return this.words.filter((w)=> w.category == "Custom");
+    }
+
     /**
-     * Returns words array
+     * Returns words array by category
      * @param catTitle
      * @param availLevel
      * @param count
      * @returns {Promise<T>}
      */
-    getRandomWordsArray(catTitle: string, availLevel: number, count: number, exceptions: number[]):Promise<IWord[]>{
-        return new Promise(resolve => {
-            this.http.get('/assets/data/words.json')
-                .map((res) => res.json())
-                .subscribe(data => {
-                    let words: IWord[] = [];
-                    let categoryWords = data.filter((w)=> w.category==catTitle && w.level<=availLevel);
-                    for (var j=0; j < count; j++) {
-                       let k = Math.round( Math.random() * (categoryWords.length - 0) + 0);
-                       if (exceptions.indexOf(k)) k++;
-                       words.push(data[k]);
-                   };
+    getRandomWordsByCategory(catTitle: string, availLevel: number, count: number, exceptions: number[]):IWord[]{
 
-                    this.words = data;
-                    resolve(words);
-                }, (rej) => {console.error("Could not load local data",rej)});
-        });
+        if(!this.words) throw "Empty words service array!";
+        let categoryWords = this.words.filter((w)=> w.category == catTitle && w.level <= availLevel);
+        let words: IWord[] = [];
+        for (var j=0; j < count; j++) {
+            let k = Math.round( Math.random() * (categoryWords.length - 0) + 0);
+            if (exceptions.indexOf(k)) k++;
+            words.push(this.words[k]);
+        };
+        //console.log('getRandomWordsByCategory', categoryWords, words)
+
+        return words;
     }
 
     addKnownWord(wordId: number){
         this.words[wordId].status = WordsStatus.Enabled;
+    }
+
+    addCustomWord(word: IWord){
+        console.log('addWord', word)
+        this.words.push(word);
     }
 
 }

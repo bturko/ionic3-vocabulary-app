@@ -6,13 +6,14 @@ import { SettingsService }                     from '../../shared/services/setti
 import { StoreService }                        from '../../shared/services/store.service';
 import { IUser }                               from '../../shared/interfaces/user.interface';
 import { MainPage }                            from "../main/main";
+import { WordsService }                        from "../../shared/services/words.service";
 
 
 @IonicPage()
 @Component({
   selector: 'page-learn',
   templateUrl: 'learn.html',
-  providers: [ UserService, StoreService ]
+  providers: [ UserService, StoreService, WordsService ]
 })
 export class LearnPage {
   isAndroid: boolean = false;
@@ -20,19 +21,23 @@ export class LearnPage {
   user: IUser;
   showGame: boolean = false;
   DataArray: Array<string> = [];
+  wordsService: WordsService;
 
-  constructor(public alerCtrl: AlertController,
-              public navCtrl: NavController,
-              public navParams: NavParams,
-              private userService: UserService,
-              private storeService: StoreService,
-              private settingsService: SettingsService
+  constructor(
+      public alerCtrl: AlertController,
+      public navCtrl: NavController,
+      public navParams: NavParams,
+      private userService: UserService,
+      private storeService: StoreService,
+      private settingsService: SettingsService,
+      wordsService: WordsService
   ){
-
+    this.wordsService = wordsService;
+    this.wordsService.initWords();
   }
 
   ionViewDidLoad() {
-    this.user = this.userService.getUser();
+    this.user = this.userService.user;
     this.getData();
   }
 
@@ -47,7 +52,7 @@ export class LearnPage {
   testRadioResult;
 
   nextScript(){
-    this.user.scriptId = this.userService.setScriptId( ++this.user.scriptId );
+    this.user.scriptId = this.user.scriptId = ++this.user.scriptId ;
 
     switch (this.user.scriptId){
       case 1:
@@ -103,8 +108,8 @@ export class LearnPage {
     alert.addButton({
       text: 'Ok',
       handler: data => {
-        this.userService.setBaseExperience(data);
-        this.storeService.saveUserData();
+        this.user.baseExperience = data;
+        this.storeService.saveUserData(this.user);
         this.nextScript();
       }
     });

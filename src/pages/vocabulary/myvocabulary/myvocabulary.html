@@ -1,9 +1,3 @@
-<!--
-  Generated template for the MyvocabularyPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
   <ion-navbar>
@@ -14,5 +8,12 @@
 
 
 <ion-content padding>
+  <ion-fab right middle>
+    <button ion-fab color="danger" (click)="openModal({charNum: 0})"><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+
+  <div *ngFor='let w of words; trackBy: category;'>
+    {{ w.text }} - {{ w.translation }}
+  </div>
 
 </ion-content>

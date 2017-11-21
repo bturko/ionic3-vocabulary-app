@@ -6,12 +6,11 @@
   </ion-buttons>
 </ion-toolbar>
 
-<ion-item-group *ngIf="game.seconds > 0">
-  <ion-item-divider color="light">{{curQuestion.words[curQuestion.rightAnswer].translation}}</ion-item-divider>
+<ion-item-group *ngIf="game.seconds > 0 && curQuestion">
+  <ion-item-divider *ngIf="curQuestion.words" color="light">{{curQuestion.words[curQuestion.rightAnswer].translation}}</ion-item-divider>
   <ion-item *ngFor="let w of curQuestion.words; index as $index">
     <span (click)="choose($index)">{{w.text}}</span>
   </ion-item>
-
 </ion-item-group>
 
 <div *ngIf="game.seconds < 1">
@@ -26,5 +25,7 @@
       <ion-icon name="star" color="bright"></ion-icon>
     </ion-col>
   </ion-row>
-
+  <ion-buttons>
+    Продолжить
+  </ion-buttons>
 </div>

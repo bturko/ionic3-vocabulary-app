@@ -7,7 +7,8 @@ import { HttpModule }                               from '@angular/http';
 import { MainPage }                                 from '../pages/main/main';
 import { VocabularyPage }                           from '../pages/vocabulary/vocabulary';
 import { AppVocabularyPage }                        from '../pages/vocabulary/appvocabulary/appvocabulary';
-import { MyVocabularyPage }                         from '../pages/vocabulary/myvocabulary/myvocabulary';
+import { MyVocabularyPage  }                        from '../pages/vocabulary/myvocabulary/myvocabulary';
+import { ModalContentPage }                         from '../pages/vocabulary/myvocabulary/add-word/add-word';
 import { LearnPage }                                from '../pages/learn/learn';
 import { GamePage }                                 from '../pages/learn/game/game';
 /* components */
@@ -25,6 +26,10 @@ import { Toast }                                    from '@ionic-native/toast';
 import { SettingsService }                          from '../shared/services/settings.service';
 import { CategoriesService }                        from '../shared/services/categories.service';
 
+/* data services */
+import { HttpCategoriesService }                    from '../shared/services/categories.http.service';
+import { HttpWordsService }                         from '../shared/services/words.http.service';
+
 @NgModule({
   declarations: [
     MyVocabularyApp,
@@ -32,6 +37,7 @@ import { CategoriesService }                        from '../shared/services/cat
     VocabularyPage,
     AppVocabularyPage,
     MyVocabularyPage,
+    ModalContentPage,
     LearnPage,
     GamePage,
     TagCategoriesComponent,
@@ -51,8 +57,10 @@ import { CategoriesService }                        from '../shared/services/cat
     VocabularyPage,
     AppVocabularyPage,
     MyVocabularyPage,
+    ModalContentPage,
     LearnPage,
-    GamePage
+    GamePage,
+    ModalContentPage
   ],
   providers: [
     InAppBrowser,
@@ -60,6 +68,8 @@ import { CategoriesService }                        from '../shared/services/cat
     Toast,
     SettingsService,
     CategoriesService,
+    HttpCategoriesService,
+    HttpWordsService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

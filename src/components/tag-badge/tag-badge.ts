@@ -9,18 +9,19 @@ import { WordsService }                    from '../../shared/services/words.ser
 })
 export class TagBadgeComponent {
   @Output() onChanged = new EventEmitter<boolean>();
-
+  //wordsService: WordsService;
   currWords: IWord[];
 
   constructor(private wordsService: WordsService) {
-    this.wordsService.getFromCategory("Животные", 1).then(data => {
-       this.currWords = data;
-    });
+    this.wordsService = wordsService;
+    this.wordsService.initWords().then(
+        ()=> this.currWords = this.wordsService.getFromCategory("Животные", 4)
+    )
   }
 
   start(){
-    //this.showGame = true;
     this.onChanged.emit(true);
+
   }
 
 }

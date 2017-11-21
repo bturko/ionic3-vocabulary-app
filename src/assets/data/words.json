@@ -5,7 +5,7 @@
     "translation": "муравей",
     "level": 5,
     "transcription": "[ ænt ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 2,
@@ -13,7 +13,7 @@
     "translation": "антилопа",
     "level": 2,
     "transcription": "[ ˈæntɪləʊp ]",
-    "category": "[Животные]",
+    "category": "Животные",
     "status": 1
   },
   {
@@ -22,7 +22,7 @@
     "translation": "барсук",
     "level": 6,
     "transcription": "[ ˈbædʒə ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 4,
@@ -30,7 +30,7 @@
     "translation": "летучая мышь",
     "level": 5,
     "transcription": "[ bæt ]",
-    "category": "[Животные]",
+    "category": "Животные",
     "status": 1
   },
   {
@@ -39,7 +39,7 @@
     "translation": "медведь",
     "level": 1,
     "transcription": "[ beə ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 6,
@@ -47,7 +47,7 @@
     "translation": "бобр",
     "level": 6,
     "transcription": "[ ˈbiːvə ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 7,
@@ -55,7 +55,7 @@
     "translation": "пчела",
     "level": 2,
     "transcription": "[ biː ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 8,
@@ -63,7 +63,7 @@
     "translation": "жук",
     "level": 2,
     "transcription": "[ ˈbiːtl̩ ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 9,
@@ -71,7 +71,7 @@
     "translation": "дрозд",
     "level": 6,
     "transcription": "[ ˈblækbɜːd ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 10,
@@ -79,7 +79,7 @@
     "translation": "волнистый попугай",
     "level": 7,
     "transcription": "[ ˈbʌdʒi ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 11,
@@ -87,7 +87,7 @@
     "translation": "клоп",
     "level": 4,
     "transcription": "[ bʌɡ ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 12,
@@ -95,7 +95,7 @@
     "translation": "бык",
     "level": 4,
     "transcription": "[ bʊl ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 13,
@@ -103,7 +103,7 @@
     "translation": "бабочка",
     "level": 3,
     "transcription": "[ ˈbʌtəflaɪ ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 14,
@@ -111,7 +111,7 @@
     "translation": "канюк",
     "level": 7,
     "transcription": "[ ˈbʌzəd ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 15,
@@ -119,7 +119,7 @@
     "translation": "теленок",
     "level": 6,
     "transcription": "[ kɑːf ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 16,
@@ -127,7 +127,7 @@
     "translation": "канарейка",
     "level": 4,
     "transcription": "[ kəˈneəri ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 17,
@@ -135,7 +135,7 @@
     "translation": "кот",
     "level": 1,
     "transcription": "[ kæt ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 18,
@@ -143,7 +143,7 @@
     "translation": "гусеница",
     "level": 6,
     "transcription": "[ ˈkætəpɪlə ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 19,
@@ -151,7 +151,7 @@
     "translation": "цыпленок",
     "level": 3,
     "transcription": "[ ˈtʃɪkɪn ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 20,
@@ -159,7 +159,7 @@
     "translation": "петух",
     "level": 3,
     "transcription": "[ ˈkɒk ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 21,
@@ -167,7 +167,7 @@
     "translation": "таракан",
     "level": 6,
     "transcription": "[ ˈkɒkrəʊtʃ ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 22,
@@ -175,7 +175,7 @@
     "translation": "корова",
     "level": 1,
     "transcription": "[ kaʊ ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 23,
@@ -183,7 +183,7 @@
     "translation": "журавль",
     "level": 6,
     "transcription": "[ kreɪn ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 24,
@@ -191,7 +191,7 @@
     "translation": "крокодил",
     "level": 2,
     "transcription": "[ ˈkrɒkədaɪl ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 25,
@@ -199,7 +199,7 @@
     "translation": "ворона",
     "level": 3,
     "transcription": "[ krəʊ ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 26,
@@ -207,7 +207,7 @@
     "translation": "кукушка",
     "level": 4,
     "transcription": "[ ˈkʊkuː ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 27,
@@ -215,7 +215,7 @@
     "translation": "олень",
     "level": 4,
     "transcription": "[ dɪə ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 28,
@@ -223,7 +223,7 @@
     "translation": "собака",
     "level": 1,
     "transcription": "[ dɒɡ ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 29,
@@ -231,7 +231,7 @@
     "translation": "осел",
     "level": 3,
     "transcription": "[ ˈdɒŋki ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 30,
@@ -239,7 +239,7 @@
     "translation": "утка",
     "level": 2,
     "transcription": "[ dʌk ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 31,
@@ -247,7 +247,7 @@
     "translation": "утенок",
     "level": 6,
     "transcription": "[ ˈdʌkl̩ɪŋ ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 32,
@@ -255,7 +255,7 @@
     "translation": "орел",
     "level": 5,
     "transcription": "[ ˈiːɡl̩ ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 33,
@@ -263,7 +263,7 @@
     "translation": "слон",
     "level": 1,
     "transcription": "[ ˈelɪfənt ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 34,
@@ -271,7 +271,7 @@
     "translation": "лось",
     "level": 6,
     "transcription": "[ elk ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 35,
@@ -279,7 +279,7 @@
     "translation": "сокол",
     "level": 7,
     "transcription": "[ ˈfɔːlkən ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 36,
@@ -287,7 +287,7 @@
     "translation": "хорёк",
     "level": 8,
     "transcription": "[ ˈferɪt ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 37,
@@ -295,7 +295,7 @@
     "translation": "фламинго",
     "level": 3,
     "transcription": "[ fləˈmɪŋɡəʊ ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 38,
@@ -303,7 +303,7 @@
     "translation": "муха",
     "level": 6,
     "transcription": "[ flaɪ ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 39,
@@ -311,7 +311,7 @@
     "translation": "лисица",
     "level": 1,
     "transcription": "[ fɒks ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 40,
@@ -319,7 +319,7 @@
     "translation": "лягушка",
     "level": 1,
     "transcription": "[ frɒɡ ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 41,
@@ -327,7 +327,7 @@
     "translation": "жираф",
     "level": 1,
     "transcription": "[ dʒɪˈrɑːf ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 42,
@@ -343,7 +343,7 @@
     "translation": "козел",
     "level": 5,
     "transcription": "[ ɡəʊt ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 44,
@@ -351,7 +351,7 @@
     "translation": "гусь",
     "level": 4,
     "transcription": "[ ɡuːs ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 45,
@@ -359,7 +359,7 @@
     "translation": "горилла",
     "level": 3,
     "transcription": "[ ɡəˈrɪlə ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 46,
@@ -367,7 +367,7 @@
     "translation": "кузнечик",
     "level": 7,
     "transcription": "[ ˈɡrɑːshɒpə ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 47,
@@ -375,7 +375,7 @@
     "translation": "морская свинка",
     "level": 8,
     "transcription": "[ ˈɡɪni pɪɡ ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 48,
@@ -383,7 +383,7 @@
     "translation": "заяц",
     "level": 6,
     "transcription": "[ heə ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 49,
@@ -391,7 +391,7 @@
     "translation": "ястреб",
     "level": 5,
     "transcription": "[ hɔːk ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 50,
@@ -399,7 +399,7 @@
     "translation": "тетерев",
     "level": 7,
     "transcription": "[ ˈhiːθkɒk ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 51,
@@ -407,7 +407,7 @@
     "translation": "ёж",
     "level": 6,
     "transcription": "[ ˈhedʒhɒɡ ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 52,
@@ -415,7 +415,7 @@
     "translation": "курица",
     "level": 6,
     "transcription": "[ hen ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 53,
@@ -423,7 +423,7 @@
     "translation": "цапля",
     "level": 7,
     "transcription": "[ ˈherən ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 54,
@@ -431,7 +431,7 @@
     "translation": "лошадь",
     "level": 1,
     "transcription": "[ hɔːs ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 55,
@@ -439,7 +439,7 @@
     "translation": "кенгуру",
     "level": 2,
     "transcription": "[ ˌkæŋɡəˈruː ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 56,
@@ -447,7 +447,7 @@
     "translation": "козленок",
     "level": 7,
     "transcription": "[ kɪd ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 57,
@@ -455,7 +455,7 @@
     "translation": "котенок",
     "level": 3,
     "transcription": "[ ˈkɪtn̩ ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 58,
@@ -463,7 +463,7 @@
     "translation": "божья коровка",
     "level": 6,
     "transcription": "[ ˈleɪdɪbɜːd ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 59,
@@ -471,7 +471,7 @@
     "translation": "ягненок",
     "level": 5,
     "transcription": "[ læm ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 60,
@@ -479,7 +479,7 @@
     "translation": "жаворонок",
     "level": 7,
     "transcription": "[ lɑːk ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 61,
@@ -487,7 +487,7 @@
     "translation": "пиявка",
     "level": 8,
     "transcription": "[ liːtʃ ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 62,
@@ -495,7 +495,7 @@
     "translation": "лев",
     "level": 1,
     "transcription": "[ ˈlaɪən ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 63,
@@ -503,7 +503,7 @@
     "translation": "ящерица",
     "level": 3,
     "transcription": "[ ˈlɪzəd ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 64,
@@ -511,7 +511,7 @@
     "translation": "рысь",
     "level": 6,
     "transcription": "[ lɪŋks ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 65,
@@ -519,7 +519,7 @@
     "translation": "сорока",
     "level": 6,
     "transcription": "[ ˈmæɡpaɪ ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 66,
@@ -527,7 +527,7 @@
     "translation": "обезьяна",
     "level": 2,
     "transcription": "[ ˈmʌŋki ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 67,
@@ -535,7 +535,7 @@
     "translation": "моль",
     "level": 9,
     "transcription": "[ mɒθ ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 68,
@@ -543,7 +543,7 @@
     "translation": "мышь",
     "level": 1,
     "transcription": "[ maʊs ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 69,
@@ -551,7 +551,7 @@
     "translation": "соловей",
     "level": 9,
     "transcription": "[ ˈnaɪtɪŋɡeɪl ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 70,
@@ -559,7 +559,7 @@
     "translation": "страус",
     "level": 9,
     "transcription": "[ ˈɒstrɪtʃ ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 71,
@@ -567,7 +567,7 @@
     "translation": "сова",
     "level": 7,
     "transcription": "[ aʊl ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 72,
@@ -583,7 +583,7 @@
     "translation": "попугай",
     "level": 6,
     "transcription": "[ ˈpærət ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 74,
@@ -591,7 +591,7 @@
     "translation": "куропатка",
     "level": 9,
     "transcription": "[ ˈpɑːtrɪdʒ ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 75,
@@ -599,7 +599,7 @@
     "translation": "павлин",
     "level": 7,
     "transcription": "[ ˈpiːkɒk ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 76,
@@ -607,7 +607,7 @@
     "translation": "пингвин",
     "level": 2,
     "transcription": "[ ˈpeŋɡwɪn ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 77,
@@ -615,7 +615,7 @@
     "translation": "фазан",
     "level": 7,
     "transcription": "[ ˈfeznt ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 78,
@@ -623,7 +623,7 @@
     "translation": "поросенок",
     "level": 1,
     "transcription": "[ pɪɡ ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 79,
@@ -631,7 +631,7 @@
     "translation": "голубь",
     "level": 8,
     "transcription": "[ ˈpɪdʒən ] [ dʌv ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 80,
@@ -639,7 +639,7 @@
     "translation": "белый медведь",
     "level": 4,
     "transcription": "[ ˈpəʊlə beə ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 81,
@@ -647,7 +647,7 @@
     "translation": "пони",
     "level": 1,
     "transcription": "[ ˈpəʊni ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 82,
@@ -655,7 +655,7 @@
     "translation": "щенок",
     "level": 5,
     "transcription": "[ ˈpʌpi ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 83,
@@ -663,7 +663,7 @@
     "translation": "кролик",
     "level": 1,
     "transcription": "[ ˈræbɪt ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 84,
@@ -671,7 +671,7 @@
     "translation": "баран",
     "level": 6,
     "transcription": "[ ræm ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 85,
@@ -679,7 +679,7 @@
     "translation": "крыса",
     "level": 5,
     "transcription": "[ ræt ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 86,
@@ -687,7 +687,7 @@
     "translation": "ворон",
     "level": 6,
     "transcription": "[ ˈreɪvn̩ ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 87,
@@ -695,7 +695,7 @@
     "translation": "носорог",
     "level": 7,
     "transcription": "[ ˈraɪnəʊ ] [ raɪˈnɒsərəs ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 88,
@@ -703,7 +703,7 @@
     "translation": "скорпион",
     "level": 3,
     "transcription": "[ ˈskɔːpɪən ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 89,
@@ -711,7 +711,7 @@
     "translation": "чайка",
     "level": 9,
     "transcription": "[ ˈsiːɡʌl ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 90,
@@ -719,7 +719,7 @@
     "translation": "тюлень",
     "level": 7,
     "transcription": "[ siːl ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 91,
@@ -727,7 +727,7 @@
     "translation": "акула",
     "level": 3,
     "transcription": "[ ʃɑːk ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 92,
@@ -735,7 +735,7 @@
     "translation": "овца",
     "level": 4,
     "transcription": "[ ʃiːp ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 93,
@@ -743,7 +743,7 @@
     "translation": "улитка",
     "level": 8,
     "transcription": "[ sneɪl ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 94,
@@ -751,7 +751,7 @@
     "translation": "змея",
     "level": 3,
     "transcription": "[ sneɪk ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 95,
@@ -759,7 +759,7 @@
     "translation": "воробей",
     "level": 4,
     "transcription": "[ ˈspærəʊ ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 96,
@@ -767,7 +767,7 @@
     "translation": "паук",
     "level": 2,
     "transcription": "[ ˈspaɪdə ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 97,
@@ -775,7 +775,7 @@
     "translation": "белка",
     "level": 6,
     "transcription": "[ ˈskwɪrəl ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 98,
@@ -783,7 +783,7 @@
     "translation": "морская звезда",
     "level": 8,
     "transcription": "[ ˈstɑːfɪʃ ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 99,
@@ -791,7 +791,7 @@
     "translation": "аист",
     "level": 9,
     "transcription": "[ stɔːk ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 100,
@@ -799,7 +799,7 @@
     "translation": "ласточка",
     "level": 8,
     "transcription": "[ ˈswɒləʊ ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 101,
@@ -807,7 +807,7 @@
     "translation": "лебедь",
     "level": 5,
     "transcription": "[ swɒn ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 102,
@@ -815,7 +815,7 @@
     "translation": "тигр",
     "level": 1,
     "transcription": "[ ˈtaɪɡə ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 103,
@@ -823,7 +823,7 @@
     "translation": "синица",
     "level": 9,
     "transcription": "[ ˈtɪtmaʊs ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 104,
@@ -831,7 +831,7 @@
     "translation": "черепаха",
     "level": 3,
     "transcription": "[ ˈtɔːtəs ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 105,
@@ -839,7 +839,7 @@
     "translation": "индюк",
     "level": 6,
     "transcription": "[ ˈtɜːki ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 106,
@@ -847,7 +847,7 @@
     "translation": "горлица",
     "level": 9,
     "transcription": "[ ˈtɜːtldʌv ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 107,
@@ -855,7 +855,7 @@
     "translation": "гадюка",
     "level": 8,
     "transcription": "[ ˈvaɪpə ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 108,
@@ -863,7 +863,7 @@
     "translation": "гриф",
     "level": 9,
     "transcription": "[ ˈvʌltʃə ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 109,
@@ -871,7 +871,7 @@
     "translation": "оса",
     "level": 9,
     "transcription": "[ wɒsp ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 110,
@@ -879,7 +879,7 @@
     "translation": "дикий кабан",
     "level": 9,
     "transcription": "[ waɪld bɔː ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 111,
@@ -887,7 +887,7 @@
     "translation": "волк",
     "level": 1,
     "transcription": "[ wʊlf ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 112,
@@ -895,7 +895,7 @@
     "translation": "дятел",
     "level": 8,
     "transcription": "[ ˈwʊdpekə ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 113,
@@ -903,7 +903,7 @@
     "translation": "червь",
     "level": 2,
     "transcription": "[ wɜːm ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 114,
@@ -911,7 +911,7 @@
     "translation": "зебра",
     "level": 1,
     "transcription": "[ ˈzebrə ]",
-    "category": "[Животные]"
+    "category": "Животные"
   },
   {
     "id": 115,
@@ -919,7 +919,7 @@
     "translation": "кухня",
     "level": 3,
     "transcription": "[ˈkɪtʃɪn]",
-    "category": "[Кухня]"
+    "category": "Кухня"
   },
   {
     "id": 116,
@@ -927,7 +927,7 @@
     "translation": "конфорка",
     "level": 9,
     "transcription": "['bɜːnə]",
-    "category": "[Кухня]"
+    "category": "Кухня"
   },
   {
     "id": 117,
@@ -935,7 +935,7 @@
     "translation": "морозильная камера",
     "level": 5,
     "transcription": "['friːzə]",
-    "category": "[Кухня]"
+    "category": "Кухня"
   },
   {
     "id": 118,
@@ -943,7 +943,7 @@
     "translation": "раковина",
     "level": 9,
     "transcription": "[sɪŋk]",
-    "category": "[Кухня]"
+    "category": "Кухня"
   },
   {
     "id": 119,
@@ -951,7 +951,7 @@
     "translation": "губка",
     "level": 8,
     "transcription": "[spʌnʤ]",
-    "category": "[Кухня]"
+    "category": "Кухня"
   },
   {
     "id": 120,
@@ -959,7 +959,7 @@
     "translation": "печь",
     "level": 8,
     "transcription": "[stəuv]",
-    "category": "[Кухня]"
+    "category": "Кухня"
   },
   {
     "id": 121,
@@ -967,7 +967,7 @@
     "translation": "полотенце",
     "level": 5,
     "transcription": "['tauəl]",
-    "category": "[Кухня]"
+    "category": "Кухня"
   },
   {
     "id": 122,
@@ -975,7 +975,7 @@
     "translation": "шкаф с ящиками",
     "level": 7,
     "transcription": "['kæbɪnət]",
-    "category": "[Кухня]"
+    "category": "Кухня"
   },
   {
     "id": 123,
@@ -983,7 +983,7 @@
     "translation": "микроволновая печь",
     "level": 6,
     "transcription": "['maɪkrə(u)weɪv]",
-    "category": "[Кухня]"
+    "category": "Кухня"
   },
   {
     "id": 124,
@@ -991,7 +991,7 @@
     "translation": "контейнер",
     "level": 8,
     "transcription": "['kænɪstə]",
-    "category": "[Кухня]"
+    "category": "Кухня"
   },
   {
     "id": 125,
@@ -999,7 +999,7 @@
     "translation": "тостер",
     "level": 3,
     "transcription": "['təustə]",
-    "category": "[Кухня]"
+    "category": "Кухня"
   },
   {
     "id": 126,
@@ -1007,7 +1007,7 @@
     "translation": "духовка",
     "level": 5,
     "transcription": "['ʌv(ə)n]",
-    "category": "[Кухня]"
+    "category": "Кухня"
   },
   {
     "id": 127,
@@ -1015,7 +1015,7 @@
     "translation": "прихватка",
     "level": 9,
     "transcription": "['pɔthəuldə]",
-    "category": "[Кухня]"
+    "category": "Кухня"
   },
   {
     "id": 128,
@@ -1023,7 +1023,7 @@
     "translation": "водопроводный кран",
     "level": 9,
     "transcription": "['fɔːsɪt]",
-    "category": "[Кухня]"
+    "category": "Кухня"
   },
   {
     "id": 129,
@@ -1031,7 +1031,7 @@
     "translation": "книга с рецептами",
     "level": 4,
     "transcription": "['kukbuk]",
-    "category": "[Кухня]"
+    "category": "Кухня"
   },
   {
     "id": 130,
@@ -1039,7 +1039,7 @@
     "translation": "холодильник",
     "level": 6,
     "transcription": "[rɪ'frɪʤ(ə)reɪtə]",
-    "category": "[Кухня]"
+    "category": "Кухня"
   },
   {
     "id": 131,
@@ -1047,7 +1047,7 @@
     "translation": "посудомоечная машина",
     "level": 7,
     "transcription": "['dɪʃˌwɔʃə]",
-    "category": "[Кухня]"
+    "category": "Кухня"
   },
   {
     "id": 132,
@@ -1055,7 +1055,7 @@
     "translation": "стол",
     "level": 1,
     "transcription": "['teɪbl]",
-    "category": "[Кухня]"
+    "category": "Кухня"
   },
   {
     "id": 133,
@@ -1063,7 +1063,7 @@
     "translation": "стул",
     "level": 2,
     "transcription": "[ʧeə]",
-    "category": "[Кухня]"
+    "category": "Кухня"
   },
   {
     "id": 134,
@@ -1071,7 +1071,7 @@
     "translation": "кухонная посуда",
     "level": 7,
     "transcription": "['kɪʧɪnweə]",
-    "category": "[Кухня]"
+    "category": "Кухня"
   },
   {
     "id": 135,
@@ -1079,7 +1079,7 @@
     "translation": "ведро",
     "level": 7,
     "transcription": "[peɪl]",
-    "category": "[Кухня]"
+    "category": "Кухня"
   },
   {
     "id": 136,
@@ -1087,7 +1087,7 @@
     "translation": "ложка",
     "level": 2,
     "transcription": "[ spuːn ]",
-    "category": "[Кухня]"
+    "category": "Кухня"
   },
   {
     "id": 137,
@@ -1095,7 +1095,7 @@
     "translation": "нож",
     "level": 1,
     "transcription": "[nīf]",
-    "category": "[Кухня]"
+    "category": "Кухня"
   },
   {
     "id": 138,
@@ -1103,7 +1103,7 @@
     "translation": "вилка",
     "level": 1,
     "transcription": "[fôrk]",
-    "category": "[Кухня]"
+    "category": "Кухня"
   },
   {
     "id": 139,
@@ -1111,7 +1111,7 @@
     "translation": "цвет",
     "level": 1,
     "transcription": "['kʌlə]",
-    "category": "[Цвета]"
+    "category": "Цвета"
   },
   {
     "id": 140,
@@ -1119,7 +1119,7 @@
     "translation": "белый",
     "level": 1,
     "transcription": "[(h)waɪt]",
-    "category": "[Цвета]"
+    "category": "Цвета"
   },
   {
     "id": 141,
@@ -1127,7 +1127,7 @@
     "translation": "желтый",
     "level": 1,
     "transcription": "['jeləu]",
-    "category": "[Цвета]"
+    "category": "Цвета"
   },
   {
     "id": 142,
@@ -1135,7 +1135,7 @@
     "translation": "бежевый",
     "level": 4,
     "transcription": "[beɪʒ]",
-    "category": "[Цвета]"
+    "category": "Цвета"
   },
   {
     "id": 143,
@@ -1143,7 +1143,7 @@
     "translation": "зеленый",
     "level": 1,
     "transcription": "[griːn]",
-    "category": "[Цвета]"
+    "category": "Цвета"
   },
   {
     "id": 144,
@@ -1151,7 +1151,7 @@
     "translation": "коричневый",
     "level": 2,
     "transcription": "[braun]",
-    "category": "[Цвета]"
+    "category": "Цвета"
   },
   {
     "id": 145,
@@ -1159,7 +1159,7 @@
     "translation": "розовый",
     "level": 2,
     "transcription": "[pɪŋk]",
-    "category": "[Цвета]"
+    "category": "Цвета"
   },
   {
     "id": 146,
@@ -1167,7 +1167,7 @@
     "translation": "красный",
     "level": 1,
     "transcription": "[red]",
-    "category": "[Цвета]"
+    "category": "Цвета"
   },
   {
     "id": 147,
@@ -1175,7 +1175,7 @@
     "translation": "сиреневый",
     "level": 7,
     "transcription": "['laɪlək]",
-    "category": "[Цвета]"
+    "category": "Цвета"
   },
   {
     "id": 148,
@@ -1183,7 +1183,7 @@
     "translation": "бордовый",
     "level": 7,
     "transcription": "['bɜːg(ə)ndɪ]",
-    "category": "[Цвета]"
+    "category": "Цвета"
   },
   {
     "id": 149,
@@ -1191,7 +1191,7 @@
     "translation": "оливковый",
     "level": 6,
     "transcription": "['ɔlɪv]",
-    "category": "[Цвета]"
+    "category": "Цвета"
   },
   {
     "id": 150,
@@ -1199,7 +1199,7 @@
     "translation": "оранжевый",
     "level": 3,
     "transcription": "['ɔrɪnʤ]",
-    "category": "[Цвета]"
+    "category": "Цвета"
   },
   {
     "id": 151,
@@ -1207,7 +1207,7 @@
     "translation": "розовый",
     "level": 4,
     "transcription": "['rəuzɪ]",
-    "category": "[Цвета]"
+    "category": "Цвета"
   },
   {
     "id": 152,
@@ -1215,7 +1215,7 @@
     "translation": "серый",
     "level": 1,
     "transcription": "[greɪ]",
-    "category": "[Цвета]"
+    "category": "Цвета"
   },
   {
     "id": 153,
@@ -1223,7 +1223,7 @@
     "translation": "голубой",
     "level": 1,
     "transcription": "[bluː]",
-    "category": "[Цвета]"
+    "category": "Цвета"
   },
   {
     "id": 154,
@@ -1231,7 +1231,7 @@
     "translation": "фиолетовый",
     "level": 5,
     "transcription": "['vaɪələt]",
-    "category": "[Цвета]"
+    "category": "Цвета"
   },
   {
     "id": 155,
@@ -1239,7 +1239,7 @@
     "translation": "пурпурный",
     "level": 5,
     "transcription": "['pɜːpl]",
-    "category": "[Цвета]"
+    "category": "Цвета"
   },
   {
     "id": 156,
@@ -1247,7 +1247,7 @@
     "translation": "шоколадный",
     "level": 4,
     "transcription": "['ʧɔklət]",
-    "category": "[Цвета]"
+    "category": "Цвета"
   },
   {
     "id": 157,
@@ -1255,7 +1255,7 @@
     "translation": "черный",
     "level": 1,
     "transcription": "[blæk]",
-    "category": "[Цвета]"
+    "category": "Цвета"
   },
   {
     "id": 158,
@@ -1263,7 +1263,7 @@
     "translation": "золотистый",
     "level": 2,
     "transcription": "['gəuld(ə)n]",
-    "category": "[Цвета]"
+    "category": "Цвета"
   },
   {
     "id": 159,
@@ -1271,7 +1271,7 @@
     "translation": "серебристый",
     "level": 2,
     "transcription": "['sɪlvə]",
-    "category": "[Цвета]"
+    "category": "Цвета"
   },
   {
     "id": 160,
@@ -1279,7 +1279,7 @@
     "translation": "бронзовый",
     "level": 3,
     "transcription": "[brɔnz]",
-    "category": "[Цвета]"
+    "category": "Цвета"
   },
   {
     "id": 161,
@@ -1287,7 +1287,7 @@
     "translation": "светлый",
     "level": 4,
     "transcription": "[laɪt]",
-    "category": "[Цвета]"
+    "category": "Цвета"
   },
   {
     "id": 162,
@@ -1295,7 +1295,7 @@
     "translation": "тёмный",
     "level": 2,
     "transcription": "[dɑːk]",
-    "category": "[Цвета]"
+    "category": "Цвета"
   },
   {
     "id": 163,
@@ -1303,7 +1303,7 @@
     "translation": "фрукт",
     "level": 1,
     "transcription": "[fruːt]",
-    "category": "[Фрукты]"
+    "category": "Фрукты"
   },
   {
     "id": 164,
@@ -1311,7 +1311,7 @@
     "translation": "абрикос",
     "level": 5,
     "transcription": "['eɪprɪkɔt]",
-    "category": "[Фрукты]"
+    "category": "Фрукты"
   },
   {
     "id": 165,
@@ -1319,7 +1319,7 @@
     "translation": "ананас",
     "level": 4,
     "transcription": "['paɪnæpl]",
-    "category": "[Фрукты]"
+    "category": "Фрукты"
   },
   {
     "id": 166,
@@ -1327,7 +1327,7 @@
     "translation": "банан",
     "level": 1,
     "transcription": "[bə'nɑːnə]",
-    "category": "[Фрукты]"
+    "category": "Фрукты"
   },
   {
     "id": 167,
@@ -1335,7 +1335,7 @@
     "translation": "бергамот",
     "level": 6,
     "transcription": "['bɜːgəmɔt]",
-    "category": "[Фрукты]"
+    "category": "Фрукты"
   },
   {
     "id": 168,
@@ -1343,7 +1343,7 @@
     "translation": "виноград",
     "level": 5,
     "transcription": "[greɪp]",
-    "category": "[Фрукты]"
+    "category": "Фрукты"
   },
   {
     "id": 169,
@@ -1351,7 +1351,7 @@
     "translation": "грейпфрут",
     "level": 4,
     "transcription": "['greɪpfruːt]",
-    "category": "[Фрукты]"
+    "category": "Фрукты"
   },
   {
     "id": 170,
@@ -1359,7 +1359,7 @@
     "translation": "груша",
     "level": 7,
     "transcription": "[peə]",
-    "category": "[Фрукты]"
+    "category": "Фрукты"
   },
   {
     "id": 171,
@@ -1367,7 +1367,7 @@
     "translation": "дыня",
     "level": 7,
     "transcription": "['melən]",
-    "category": "[Фрукты]"
+    "category": "Фрукты"
   },
   {
     "id": 172,
@@ -1375,7 +1375,7 @@
     "translation": "лимон",
     "level": 2,
     "transcription": "['lemən]",
-    "category": "[Фрукты]"
+    "category": "Фрукты"
   },
   {
     "id": 173,
@@ -1383,7 +1383,7 @@
     "translation": "мандарин",
     "level": 3,
     "transcription": "['mænd(ə)rɪn]",
-    "category": "[Фрукты]"
+    "category": "Фрукты"
   },
   {
     "id": 174,
@@ -1391,7 +1391,7 @@
     "translation": "персик",
     "level": 7,
     "transcription": "[piːʧ]",
-    "category": "[Фрукты]"
+    "category": "Фрукты"
   },
   {
     "id": 175,
@@ -1399,7 +1399,7 @@
     "translation": "слива",
     "level": 7,
     "transcription": "[plʌm]",
-    "category": "[Фрукты]"
+    "category": "Фрукты"
   },
   {
     "id": 176,
@@ -1407,7 +1407,7 @@
     "translation": "яблоко",
     "level": 1,
     "transcription": "['æpl]",
-    "category": "[Фрукты]"
+    "category": "Фрукты"
   },
   {
     "id": 177,
@@ -1415,7 +1415,7 @@
     "translation": "лайм",
     "level": 4,
     "transcription": "[laɪm]",
-    "category": "[Фрукты]"
+    "category": "Фрукты"
   },
   {
     "id": 178,
@@ -1423,7 +1423,7 @@
     "translation": "киви",
     "level": 3,
     "transcription": "['kiːwiː]",
-    "category": "[Фрукты]"
+    "category": "Фрукты"
   },
   {
     "id": 179,
@@ -1431,7 +1431,7 @@
     "translation": "инжир",
     "level": 9,
     "transcription": "[fɪg]",
-    "category": "[Фрукты]"
+    "category": "Фрукты"
   },
   {
     "id": 180,
@@ -1439,7 +1439,7 @@
     "translation": "манго",
     "level": 2,
     "transcription": "['mæŋgəu]",
-    "category": "[Фрукты]"
+    "category": "Фрукты"
   },
   {
     "id": 181,
@@ -1447,7 +1447,7 @@
     "translation": "хурма",
     "level": 9,
     "transcription": "[pə'sɪmən]",
-    "category": "[Фрукты]"
+    "category": "Фрукты"
   },
   {
     "id": 182,
@@ -1455,6 +1455,14 @@
     "translation": "помело",
     "level": 8,
     "transcription": "['pɔmɪləu]",
-    "category": "[Фрукты]"
+    "category": "Фрукты"
+  },
+  {
+    "id": 0,
+    "text": "cabin",
+    "translation": "кабина",
+    "level": 1,
+    "transcription": "['pɔmɪləu]",
+    "category": "Custom"
   }
 ]

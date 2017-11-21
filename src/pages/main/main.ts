@@ -5,11 +5,13 @@ import { LearnPage }                from '../learn/learn';
 import { InAppBrowser,
          InAppBrowserOptions }      from '@ionic-native/in-app-browser';
 import { SettingsService }          from "../../shared/services/settings.service";
+import { SplashScreen }             from '@ionic-native/splash-screen';
 
 
 @Component({
   selector: 'page-posts',
-  templateUrl: 'main.html'
+  templateUrl: 'main.html',
+  providers: [ SplashScreen ]
 })
 export class MainPage {
 
@@ -37,12 +39,15 @@ export class MainPage {
   image;
   fullAppUrl: string = "http://google.com/";
 
-  constructor(public navCtrl: NavController,
-              public navParams: NavParams,
-              private theInAppBrowser: InAppBrowser,
-              settingsService: SettingsService
+  constructor(
+      public navCtrl: NavController,
+      public navParams: NavParams,
+      private theInAppBrowser: InAppBrowser,
+      settingsService: SettingsService,
+      private splashScreen: SplashScreen
   ) {
-    //this.subreddit = this.navParams.get('subreddit');
+    this.splashScreen.show();
+    setTimeout(()=>this.splashScreen.hide(), 2000)
     this.image = 'https://randomuser.me/api/portraits/women/79.jpg';
     settingsService.getPlatform();
     this.menuItems = [
@@ -74,34 +79,18 @@ export class MainPage {
  }
 
   getPostImage(post) {
-   let postImage = '';
-   if (!post.imageError && post.preview) {
-     postImage = post.preview.images[0].source.url;
    }
-   return postImage;
-  }
 
   setImageError(post) {
-    post.imageError = true;
   }
 
 
   goToPost(post) {
-    window.open(post.url, '_blank');
   }
 
   goToSubreddit(subreddit) {
-    this.navCtrl.push(MainPage, {subreddit})
+  //  this.navCtrl.push(MainPage, {subreddit})
   }
-
-  // loadMore(infiniteScroll) {
-  //   let lastPost = this.posts[this.posts.length - 1];
-  //   if (!lastPost) {
-  //     infiniteScroll.complete()
-  //   } else {
-  //
-  //   }
-  // }
 
   openNavDetailsPage(item) {
     switch (item.icon){

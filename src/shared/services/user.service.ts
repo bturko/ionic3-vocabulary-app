@@ -1,29 +1,27 @@
 import { Injectable } from '@angular/core';
 import { IUser }      from '../interfaces/user.interface'
+import { User }       from '../types/user.type'
 
 @Injectable()
 export class UserService {
-    user = {
-        wordsLevel: 0,
-        scriptId: 0,
-        baseExperience: 0,
-        availableCategories: []
-    };
+    _user: IUser;
 
-    getUser(): IUser {
-        return this.user;
+    constructor(){
+        this._user = new User();
+        /* TODO: all below will be getting from storage: */
+        this._user.wordsLevel = 1;
+        this._user.scriptId = 0;
+        this._user.baseExperience = 1;
+        this._user.availableCategories = [1]
     }
 
-    setScriptId(scriptId:number): number {
-        this.user.scriptId = scriptId;
-        return this.user.scriptId;
+
+    public get user(): IUser {
+        return this._user;
     }
 
-    setBaseExperience(expLevel: number): void{
-        this.user.baseExperience = expLevel;
+    public set user(user: IUser) {
+        this._user = user;
     }
 
-    setAvailableCategories(cats: number[]): void{
-        this.user.availableCategories = cats;
-    }
 }

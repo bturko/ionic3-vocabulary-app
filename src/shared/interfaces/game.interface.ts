@@ -4,5 +4,6 @@ export interface IGame {
     questions: IQuestion[],
     rightAnswerCount: number,
     askedCount: number,
-    seconds: number
+    seconds: number,
+    currentCategory: string
 }

@@ -24,6 +24,6 @@
   "name": "Фрукты",
   "imgPath": "fruits.jpg",
   "firstEntry": true,
-  "enabled": true,
+  "enabled": false,
   "order": 0
 }]

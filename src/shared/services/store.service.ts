@@ -1,63 +1,74 @@
-import { Injectable }    from '@angular/core';
-import { IStore }        from "../interfaces/store.interface";
-import { UserService }   from './user.service'
-import { NativeStorage } from '@ionic-native/native-storage';
-import { Toast }         from '@ionic-native/toast';
-import { Platform }      from 'ionic-angular';
-import { IUser }         from "../interfaces/user.interface";
+import { Injectable }      from '@angular/core';
+import { IStore }          from "../interfaces/store.interface";
+import { SettingsService } from './settings.service'
+import { NativeStorage }   from '@ionic-native/native-storage';
+import { Toast }           from '@ionic-native/toast';
+import { Platform }        from 'ionic-angular';
+import { IUser }           from "../interfaces/user.interface";
 
 @Injectable()
 export class StoreService {
     platformName: string;
 
-    constructor (private userService: UserService, private nativeStorage: NativeStorage,
-                 private toast: Toast,
-                 private platform: Platform
+    constructor (
+        private settingsService: SettingsService,
+        private nativeStorage: NativeStorage,
+        private platform: Platform
     ) {
-        this.userService = userService;
+        this.settingsService = settingsService;
         platform.ready().then((source) => {
             this.platformName = source;
         });
     }
 
-    loadUserData(): IStore {
-        let user = this.userService.getUser();
-        let store = {
-            user: user,
-            userVocabulary: []
-        }
+    loadUserData(): void {
+        //let user = this.userService.user;
+        // let store = {
+        //      user: {},
+        //      userVocabulary: []
+        //  }
 
-        this.nativeStorage.getItem('myitem')
+        this.nativeStorage.getItem('user')
             .then(
                 store => {
-                    console.log('Stored item!', store)
+                    this.settingsService.showMessage("Stored loaded!")
+                    // console.log('Stored loaded!', store)
+                    // this.toast.show(`Stored loaded!`, '5000', 'center').subscribe(toast => {});
                     return store;
                 },
                 error => {
-                    console.log("Can't get item!")
-                    //this.toast.show(`Can't get item!`, '5000', 'center').subscribe(toast => {});
+                    this.settingsService.showError("Can't get stored data!")
+                    // console.log("Can't get stored data!")
+                    // this.toast.show(`Can't get stored data!`, '5000', 'center').subscribe(toast => {});
                 }
             );
-        return store; //TODO: not good!
+        //return store; //TODO: not good!
 
     }
 
-    saveUserData(): void {
-        let user: IUser = this.userService.getUser();
+    saveUserData(user: IUser): void {
+        //let user: IUser = this.userService.user;
 
         if (this.platform.is('android')) {
 
         }
 
-        this.nativeStorage.setItem('myitem', {property: 'value', anotherProperty: 'anotherValue'})
+        this.nativeStorage.setItem('user', {
+            wordsLevel: user.wordsLevel,
+            scriptId: user.scriptId,
+            baseExperience: user.baseExperience,
+            availableCategories: user.availableCategories
+        })
             .then(
                 () => {
-                    console.log('Stored item!');
-                    //this.toast.show(`Stored item!`, '5000', 'center').subscribe(toast => {});
+                    this.settingsService.showMessage("Stored item!")
+                    // console.log('Stored item!');
+                    // this.toast.show(`Stored item!`, '5000', 'center').subscribe(toast => {});
                 },
                 error => {
-                    console.error('Error storing item', error);
-                    //this.toast.show(`NOT Stored!`, '5000', 'center').subscribe(toast => {});
+                    this.settingsService.showError("Error while storing data!");
+                    // console.error('Error while storing data', error);
+                    // this.toast.show(`Error while storing data!`, '5000', 'center').subscribe(toast => {});
                 }
             );
 

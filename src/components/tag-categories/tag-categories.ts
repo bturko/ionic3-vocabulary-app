@@ -20,7 +20,7 @@ export class TagCategoriesComponent {
       private categoriesService: CategoriesService
   ){
     this.text = 'Доступные категории';
-    this.categoriesService.getCategories()
+    this.categoriesService.getEnabledCategories()
         .then((categories) => this.categories = categories);
   }
 

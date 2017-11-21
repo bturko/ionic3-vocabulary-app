@@ -46,12 +46,21 @@ export class SettingsService {
        // });
     }
 
+    showMessage(msg: string, rej?){
+        if (this.isAndroid()) {
+            this.toast.show(msg, '5000', 'center').subscribe(toast => {});
+        }
+        else{
+            console.info(msg, rej)
+        }
+    }
+
     showError(msg: string, rej?){
         if (this.isAndroid()) {
             this.toast.show(msg, '5000', 'center').subscribe(toast => {});
         }
         else{
-            console.error(msg, rej)
+            console.info("ERROR: " + msg, rej)
         }
     }
 

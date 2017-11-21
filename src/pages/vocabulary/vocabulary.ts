@@ -2,7 +2,7 @@ import { Component }                           from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AppVocabularyPage }                   from "./appvocabulary/appvocabulary";
 import { MyVocabularyPage }                    from "./myvocabulary/myvocabulary";
-
+//import { ModalContentPage }                    from "./myvocabulary/add-word/add-word";
 
 @IonicPage()
 @Component({

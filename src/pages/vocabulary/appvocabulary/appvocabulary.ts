@@ -23,8 +23,6 @@ export class AppVocabularyPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad VocabularyPage');
-
     this.getData();
   }
 
