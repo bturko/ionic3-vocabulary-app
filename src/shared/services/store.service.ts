@@ -57,7 +57,8 @@ export class StoreService {
             wordsLevel: user.wordsLevel,
             scriptId: user.scriptId,
             baseExperience: user.baseExperience,
-            availableCategories: user.availableCategories
+            availableCategories: user.availableCategories,
+            customWords: user.customWords
         })
             .then(
                 () => {

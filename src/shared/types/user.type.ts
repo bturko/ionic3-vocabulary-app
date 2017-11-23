@@ -1,8 +1,10 @@
+import {IWord} from "../interfaces/word.interface";
 export class User {
     private _wordsLevel: number;
     private _scriptId: number;
     private _baseExperience: number;
     private _availableCategories: number[];
+    private _customWords: IWord[];
 
     /**
      * Default constructor
@@ -41,6 +43,14 @@ export class User {
 
     public set availableCategories(availableCategories: number[]) {
         this._availableCategories = availableCategories;
+    }
+
+    public get customWords(): IWord[] {
+        return this._customWords;
+    }
+
+    public set customWords(customWords: IWord[]) {
+        this._customWords = customWords;
     }
 
 }
