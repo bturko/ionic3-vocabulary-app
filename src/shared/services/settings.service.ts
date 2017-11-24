@@ -64,4 +64,59 @@ export class SettingsService {
         }
     }
 
+    menuItems(): any{
+        return [
+            {
+                'title': 'Учить',
+                'icon': 'pie',
+                'description': '',
+                'color': '#0CA9EA'
+            },
+            {
+                'title': 'Словарь',
+                'icon': 'school',
+                'description': 'l',
+                'color': '#E63135'
+            },
+            {
+                'title': 'Статистика',
+                'icon': 'stats',
+                'description': '',
+                'color': '#ea6d1e'
+            },
+            {
+                'title': 'Полная версия',
+                'icon': 'cloud',
+                'description': '',
+                'color': '#ea6d1e'
+            }
+        ]
+    }
+
+    browserOptions(): any {
+        return {
+            location: 'yes',
+            hidden : 'no',
+            clearcache : 'yes',
+            clearsessioncache : 'yes',
+            zoom : 'yes', //Android only ,shows browser zoom controls
+            hardwareback : 'yes',
+            mediaPlaybackRequiresUserAction : 'no',
+            shouldPauseOnSuspend : 'no', //Android only
+            closebuttoncaption : 'Close', //iOS only
+            disallowoverscroll : 'no', //iOS only
+            toolbar : 'yes', //iOS only
+            enableViewportScale : 'no', //iOS only
+            allowInlineMediaPlayback : 'no', //iOS only
+            presentationstyle : 'pagesheet', //iOS only
+            fullscreen : 'yes' //Windows only
+        }
+    }
+
+
+
+fullAppPath(): string{
+        return  "http://google.com/";
+    }
+
 }
