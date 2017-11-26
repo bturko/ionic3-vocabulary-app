@@ -10,7 +10,11 @@ export class User {
      * Default constructor
      */
     public constructor(){
-
+        this._wordsLevel = 1;
+        this._scriptId = 0;
+        this._baseExperience = 1;
+        this._availableCategories = [];
+        this._customWords = [];
     }
 
     public get wordsLevel(): number {

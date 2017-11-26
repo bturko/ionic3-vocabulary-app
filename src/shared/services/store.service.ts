@@ -1,8 +1,8 @@
 import { Injectable }      from '@angular/core';
-import { IStore }          from "../interfaces/store.interface";
+//import { IStore }          from "../interfaces/store.interface";
 import { SettingsService } from './settings.service'
 import { NativeStorage }   from '@ionic-native/native-storage';
-import { Toast }           from '@ionic-native/toast';
+//import { Toast }           from '@ionic-native/toast';
 import { Platform }        from 'ionic-angular';
 import { IUser }           from "../interfaces/user.interface";
 
@@ -21,27 +21,30 @@ export class StoreService {
         });
     }
 
-    loadUserData(): void {
-        //let user = this.userService.user;
-        // let store = {
-        //      user: {},
-        //      userVocabulary: []
-        //  }
+    loadUserData(): Promise<IUser> {
+        console.log("pln", this.platformName)
+        if(this.platformName=="dom"){
+            console.log('dom', localStorage.getItem("user"));
+            return new Promise((resolve)=>resolve(localStorage.getItem("user")))
+        }
+        else{
+            this.nativeStorage.getItem('user')
+                .then(
+                    store => {
+                        this.settingsService.showMessage("Stored loaded!")
+                         console.log('Stored loaded!', store)
+                         this.toast.show(`Stored loaded!`, '5000', 'center').subscribe(toast => {});
+                        return store;
+                    },
+                    error => {
+                        this.settingsService.showError("Can't get stored data!")
+                        // console.log("Can't get stored data!")
+                        // this.toast.show(`Can't get stored data!`, '5000', 'center').subscribe(toast => {});
+                    }
+                );
+        }
 
-        this.nativeStorage.getItem('user')
-            .then(
-                store => {
-                    this.settingsService.showMessage("Stored loaded!")
-                    // console.log('Stored loaded!', store)
-                    // this.toast.show(`Stored loaded!`, '5000', 'center').subscribe(toast => {});
-                    return store;
-                },
-                error => {
-                    this.settingsService.showError("Can't get stored data!")
-                    // console.log("Can't get stored data!")
-                    // this.toast.show(`Can't get stored data!`, '5000', 'center').subscribe(toast => {});
-                }
-            );
+
         //return store; //TODO: not good!
 
     }

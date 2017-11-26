@@ -2,6 +2,7 @@ import { Injectable }  from '@angular/core';
 import { Platform }    from 'ionic-angular';
 import { Http }        from '@angular/http';
 import { Toast }       from '@ionic-native/toast'
+import { Platforms } from '../enums/platforms.enum';
 
 @Injectable()
 export class SettingsService {
@@ -16,8 +17,19 @@ export class SettingsService {
         this.http = http;
     }
 
-    getPlatform(){
-        this.plt.ready().then((source) => this.platformName = source);
+    getPlatform(): number{
+       this.plt.ready().then((source) => {
+           console.log('plserv', source)
+           switch (source){
+               case "Web":
+                   return Platforms.Web;
+                   break;
+               case "android":
+               case "cordowa":
+                   return Platforms.Android;
+                   break;
+           }
+       });
     }
 
     /**
@@ -115,7 +127,7 @@ export class SettingsService {
 
 
 
-fullAppPath(): string{
+    fullAppUrl(): string{
         return  "http://google.com/";
     }
 

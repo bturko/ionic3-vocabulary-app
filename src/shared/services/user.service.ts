@@ -12,7 +12,8 @@ export class UserService {
         this._user.wordsLevel = 1;
         this._user.scriptId = 0;
         this._user.baseExperience = 1;
-        this._user.availableCategories = [1]
+        this._user.availableCategories = [1];
+        this._customWords = [];
     }
 
 

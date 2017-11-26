@@ -1,11 +1,18 @@
 import { Component }                from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController,
+         NavParams,
+         Platform }                 from 'ionic-angular';
 import { VocabularyPage }           from '../vocabulary/vocabulary';
 import { LearnPage }                from '../learn/learn';
 import { InAppBrowser,
          InAppBrowserOptions }      from '@ionic-native/in-app-browser';
-import { SettingsService }          from "../../shared/services/settings.service";
 import { SplashScreen }             from '@ionic-native/splash-screen';
+import { SettingsService }          from "../../shared/services/settings.service";
+import { StoreService }             from "../../shared/services/store.service";
+import { UserService }              from "../../shared/services/user.service";
+import { Platforms }                from "../../shared/enums/platforms.enum";
+import { IUser }                    from "../../shared/interfaces/user.interface";
+import { User }                     from "../../shared/types/user.type";
 
 
 @Component({
@@ -14,83 +21,61 @@ import { SplashScreen }             from '@ionic-native/splash-screen';
   providers: [ SplashScreen ]
 })
 export class MainPage {
-
-  loadCompleted: boolean = false;
-  subreddit;
-  menuItems = [];
   browser;
-  options : InAppBrowserOptions = {
-    location : 'yes',
-    hidden : 'no',
-    clearcache : 'yes',
-    clearsessioncache : 'yes',
-    zoom : 'yes',//Android only ,shows browser zoom controls
-    hardwareback : 'yes',
-    mediaPlaybackRequiresUserAction : 'no',
-    shouldPauseOnSuspend : 'no', //Android only
-    closebuttoncaption : 'Close', //iOS only
-    disallowoverscroll : 'no', //iOS only
-    toolbar : 'yes', //iOS only
-    enableViewportScale : 'no', //iOS only
-    allowInlineMediaPlayback : 'no',//iOS only
-    presentationstyle : 'pagesheet',//iOS only
-    fullscreen : 'yes',//Windows only
-  };
-  image;
-  fullAppUrl: string = "http://google.com/";
+  menuItems;
+  platform: number;
+  options : InAppBrowserOptions;
+  user: IUser;
+  image: string = '../assets/imgs/logo.png';
 
   constructor(
       public navCtrl: NavController,
       public navParams: NavParams,
       private theInAppBrowser: InAppBrowser,
-      settingsService: SettingsService,
-      private splashScreen: SplashScreen
+      private settingsService: SettingsService,
+      private userService: UserService,
+      private storeService: StoreService,
+      private splashScreen: SplashScreen,
+      private plt: Platform
   ) {
-    this.splashScreen.show();
-    setTimeout(()=>this.splashScreen.hide(), 2000)
-    this.image = 'https://randomuser.me/api/portraits/women/79.jpg';
-    settingsService.getPlatform();
-    this.menuItems = [
-      {
-        'title': 'Учить',
-        'icon': 'pie',
-        'description': '',
-        'color': '#0CA9EA'
-      },
-      {
-        'title': 'Словарь',
-        'icon': 'school',
-        'description': 'l',
-        'color': '#E63135'
-      },
-      {
-        'title': 'Статистика',
-        'icon': 'stats',
-        'description': '',
-        'color': '#ea6d1e'
-      },
-      {
-        'title': 'Полная версия',
-        'icon': 'cloud',
-        'description': '',
-        'color': '#ea6d1e'
-      }
-    ]
+      this.user = localStorage.setItem("user", {}) //!!!!!!!!!!!!!!!!!
+      this.plt.ready().then((source) => {
+          this.storeService = storeService;
+          this.userService = userService;
+          this.menuItems = settingsService.menuItems();
+          this.browser = settingsService.browserOptions;
+
+          // splashscreen & load data
+          if (source == Platforms.Android) {
+              //this.settingsService.getPlatform();
+              this.splashScreen.show();
+              setTimeout(() => this.splashScreen.hide(), 2000);
+              this.nativeStorage.getItem('user')
+                  .then(store => {
+                      this.settingsService.showMessage("Stored loaded!")
+                      console.log('Stored loaded!', store)
+                      this.user = store;
+                      this.toast.show(`Stored loaded!`, '5000', 'center').subscribe(toast => {});
+                      return store;
+                  }, error => {
+                      this.settingsService.showError("Can't get stored data!")
+                      console.log("Can't get stored data!")
+                      this.toast.show(`Can't get stored data!`, '5000', 'center').subscribe(toast => {});
+                  }
+              );
+          }
+          else{
+              this.user = localStorage.getItem("user")
+              if(!this.user.wordsLevel && !this.user.baseExperience) {
+                  this.user = new User();
+                  console.error("Getting local stored data error!", this.user);
+              }
+          }
+          this.userService.user = this.user;
+          console.log('uService', this.userService.user)
+      });
+
  }
-
-  getPostImage(post) {
-   }
-
-  setImageError(post) {
-  }
-
-
-  goToPost(post) {
-  }
-
-  goToSubreddit(subreddit) {
-  //  this.navCtrl.push(MainPage, {subreddit})
-  }
 
   openNavDetailsPage(item) {
     switch (item.icon){
@@ -104,7 +89,7 @@ export class MainPage {
         this.navCtrl.push(VocabularyPage, { val: item.icon })
         break;
       case "cloud":
-        this.openWithInAppBrowser(this.fullAppUrl);
+        this.openWithInAppBrowser(this.settingsService.fullAppUrl());
         break;
     }
 

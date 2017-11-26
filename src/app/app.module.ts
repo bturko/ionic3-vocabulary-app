@@ -25,10 +25,15 @@ import { Toast }                                    from '@ionic-native/toast';
 /* services */
 import { SettingsService }                          from '../shared/services/settings.service';
 import { CategoriesService }                        from '../shared/services/categories.service';
+import { WordsService }                             from "../shared/services/words.service";
+import { UserService }                              from "../shared/services/user.service";
+import { StoreService }                             from "../shared/services/store.service";
 
 /* data services */
 import { HttpCategoriesService }                    from '../shared/services/categories.http.service';
 import { HttpWordsService }                         from '../shared/services/words.http.service';
+//import {Settings} from "http2";
+
 
 @NgModule({
   declarations: [
@@ -68,6 +73,10 @@ import { HttpWordsService }                         from '../shared/services/wor
     Toast,
     SettingsService,
     CategoriesService,
+    UserService,
+    WordsService,
+    SettingsService,
+    StoreService,
     HttpCategoriesService,
     HttpWordsService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}

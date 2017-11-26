@@ -1,3 +1,5 @@
+import { IWord } from 'word.interface'
+
 export interface IUser {
     wordsLevel: number,
     baseExperience: number,
