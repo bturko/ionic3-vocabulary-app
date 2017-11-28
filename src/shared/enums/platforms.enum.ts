@@ -1,4 +1,5 @@
 export enum Platforms {
-    Web,
-    Android
+    Web = "dom",
+    Android = "android",
+    Cordova = "cordova"
 }

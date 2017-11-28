@@ -1,4 +1,4 @@
-import { Component }        from '@angular/core';
+import { Component}         from '@angular/core';
 import { IonicPage,
          NavController,
          NavParams,
@@ -9,17 +9,18 @@ import { UserService }      from '../../../shared/services/user.service';
 //import { User }             from  '../../../shared/types/user.type'
 import { StoreService }     from '../../../shared/services/store.service';
 import { IWord }            from "../../../shared/interfaces/word.interface";
-//import {share} from "rxjs/operator/share";
+import { IUser }            from "../../../shared/interfaces/user.interface";
+
 
 @IonicPage()
 @Component({
   selector: 'page-myvocabulary',
-  templateUrl: 'myvocabulary.html',
-  //providers: [  ]
+  templateUrl: 'myvocabulary.html'
 })
 export class MyVocabularyPage {
   words: IWord[];
   user: IUser;
+  searchFilter = "";
 
   constructor(
       public navCtrl: NavController,
@@ -35,14 +36,11 @@ export class MyVocabularyPage {
     this.userService = userService;
     //this.user = new User();
     this.user = this.userService.user;
-    console.log('this.user', this.user)
+
     //localStorage.setItem("user", {wordsLevel: 78})
   }
 
   ionViewDidLoad() {
-
-      //  console.log(this.user.wordsLevel)
-    //console.log('ionViewDidLoad MyvocabularyPage');
   }
 
   openModal(characterNum) {
@@ -51,11 +49,9 @@ export class MyVocabularyPage {
       if(word.text){
 
         let cw: IWord[] = this.user.customWords;
-        console.log('A',this.user,cw)
 
         cw.push(word);
         this.user.customWords = cw;
-        console.log('B',this.user)
 
         this.wordsService.addCustomWord(word);
         this.storeService.saveUserData(this.userService.user);
@@ -67,8 +63,17 @@ export class MyVocabularyPage {
 
   getData(){
     this.wordsService.initWords().then(
-        () => this.words = this.wordsService.getCustomVocabulary()
+        () => {
+          this.words = this.wordsService.getCustomVocabulary();
+          this.wordsEdt = this.words;
+        }
     )
+  }
+
+  search(val: any) {
+    if (!val) this.wordsEdt = this.words;
+
+    this.wordsEdt = this.words.filter(w => w.text.indexOf(val) >= 0);
   }
 
 
