@@ -1,6 +1,7 @@
-import { Component, Output, EventEmitter } from '@angular/core';
-import { IWord }                           from "../../shared/interfaces/word.interface";
-import { WordsService }                    from '../../shared/services/words.service';
+import { Component, Output, EventEmitter, Input } from '@angular/core';
+import { IWord }                                  from "../../shared/interfaces/word.interface";
+import { WordsService }                           from '../../shared/services/words.service';
+import { HttpCategoriesService }                  from '../../shared/services/categories.http.service'
 
 @Component({
   selector: 'tag-badge',
@@ -9,14 +10,29 @@ import { WordsService }                    from '../../shared/services/words.ser
 })
 export class TagBadgeComponent {
   @Output() onChanged = new EventEmitter<boolean>();
-  //wordsService: WordsService;
+  @Input() catId: number;
   currWords: IWord[];
+  catName: string;
+  imgPath: string;
 
-  constructor(private wordsService: WordsService) {
+  constructor(private wordsService: WordsService, private httpCategoriesService: HttpCategoriesService) {
     this.wordsService = wordsService;
-    this.wordsService.initWords().then(
-        ()=> this.currWords = this.wordsService.getFromCategory("Животные", 4)
-    )
+    this.httpCategoriesService = httpCategoriesService;
+
+    //this.catId = catId;
+    //alert("cat"+catId)
+    this.httpCategoriesService.loadCategories().then((categories)=>{
+      console.log(categories, this.catId)
+      this.catName = categories[this.catId].name;
+      this.imgPath = categories[this.catId].imgPath;
+      this.wordsService.initWords().then(
+          ()=> this.currWords = this.wordsService.getFromCategory(this.catName, 4) // 4=user.availableLevel
+      )
+    })
+  }
+
+  ionViewDidLoad() {
+
   }
 
   start(){

@@ -13,7 +13,9 @@ import { IWord }                               from '../../../shared/interfaces/
 
 @Injectable()
 export class AppVocabularyPage {
-  words: IWord[];
+  words: IWord[]; // all words
+  wordsEdt: IWord[]; // filtered words
+  searchFilter = "";
 
   constructor(
       public navCtrl: NavController,
@@ -27,7 +29,16 @@ export class AppVocabularyPage {
   }
 
   getData(){
-     this.wordsService.getVocabulary().then((words)=>this.words = words)
+     this.wordsService.getVocabulary().then((words)=>{
+       this.words = words;
+       this.wordsEdt = this.words;
+     })
+  }
+
+  search(val: any) {
+    if (!val) this.wordsEdt = this.words;
+
+    this.wordsEdt = this.words.filter(w => w.text.indexOf(val) >= 0);
   }
 
 }

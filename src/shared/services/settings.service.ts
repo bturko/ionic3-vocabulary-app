@@ -17,17 +17,15 @@ export class SettingsService {
         this.http = http;
     }
 
-    getPlatform(): number{
+    getPlatform(){
        this.plt.ready().then((source) => {
            console.log('plserv', source)
            switch (source){
                case "Web":
                    return Platforms.Web;
-                   break;
                case "android":
                case "cordowa":
                    return Platforms.Android;
-                   break;
            }
        });
     }
@@ -55,7 +53,6 @@ export class SettingsService {
                     this.showError("Could not load local data", rej);
             });
         });
-       // });
     }
 
     showMessage(msg: string, rej?){
@@ -90,12 +87,12 @@ export class SettingsService {
                 'description': 'l',
                 'color': '#E63135'
             },
-            {
+            /*{
                 'title': 'Статистика',
                 'icon': 'stats',
                 'description': '',
                 'color': '#ea6d1e'
-            },
+            },*/
             {
                 'title': 'Полная версия',
                 'icon': 'cloud',
@@ -125,10 +122,8 @@ export class SettingsService {
         }
     }
 
-
-
     fullAppUrl(): string{
-        return  "http://google.com/";
+        return  "https://play.google.com/store?hl=ru";
     }
 
 }

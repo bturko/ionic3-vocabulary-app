@@ -2,18 +2,20 @@ import { Injectable }      from '@angular/core';
 //import { IStore }          from "../interfaces/store.interface";
 import { SettingsService } from './settings.service'
 import { NativeStorage }   from '@ionic-native/native-storage';
-//import { Toast }           from '@ionic-native/toast';
+import { Toast }           from '@ionic-native/toast';
 import { Platform }        from 'ionic-angular';
 import { IUser }           from "../interfaces/user.interface";
 
 @Injectable()
 export class StoreService {
     platformName: string;
+    user: IUser;
 
     constructor (
         private settingsService: SettingsService,
         private nativeStorage: NativeStorage,
-        private platform: Platform
+        private platform: Platform,
+        private toast: Toast
     ) {
         this.settingsService = settingsService;
         platform.ready().then((source) => {
@@ -21,10 +23,8 @@ export class StoreService {
         });
     }
 
-    loadUserData(): Promise<IUser> {
-        console.log("pln", this.platformName)
+    /*loadUserData(): Promise<IUser> {
         if(this.platformName=="dom"){
-            console.log('dom', localStorage.getItem("user"));
             return new Promise((resolve)=>resolve(localStorage.getItem("user")))
         }
         else{
@@ -32,8 +32,8 @@ export class StoreService {
                 .then(
                     store => {
                         this.settingsService.showMessage("Stored loaded!")
-                         console.log('Stored loaded!', store)
-                         this.toast.show(`Stored loaded!`, '5000', 'center').subscribe(toast => {});
+                        console.log('Stored loaded!', store)
+                        this.toast.show(`Stored loaded!`, '5000', 'center').subscribe(toast => {});
                         return store;
                     },
                     error => {
@@ -47,34 +47,31 @@ export class StoreService {
 
         //return store; //TODO: not good!
 
-    }
+    }*/
 
-    saveUserData(user: IUser): void {
-        //let user: IUser = this.userService.user;
-
-        if (this.platform.is('android')) {
-
+    saveUserData(user: IUser) {
+        if (!this.platform.is('android')) {
+            localStorage.setItem("user", JSON.stringify(user));
         }
-
-        this.nativeStorage.setItem('user', {
-            wordsLevel: user.wordsLevel,
-            scriptId: user.scriptId,
-            baseExperience: user.baseExperience,
-            availableCategories: user.availableCategories,
-            customWords: user.customWords
-        })
-            .then(
-                () => {
-                    this.settingsService.showMessage("Stored item!")
-                    // console.log('Stored item!');
-                    // this.toast.show(`Stored item!`, '5000', 'center').subscribe(toast => {});
-                },
-                error => {
-                    this.settingsService.showError("Error while storing data!");
-                    // console.error('Error while storing data', error);
-                    // this.toast.show(`Error while storing data!`, '5000', 'center').subscribe(toast => {});
-                }
-            );
-
+        else{
+            this.nativeStorage.setItem('user', {
+                wordsLevel: user.wordsLevel,
+                scriptId: user.scriptId,
+                baseExperience: user.baseExperience,
+                availableCategories: user.availableCategories,
+                customWords: user.customWords
+            })
+            .then(() => {
+                this.settingsService.showMessage("Stored item!");
+                this.toast.show(`Stored item!`, '5000', 'center').subscribe(toast => {});
+            },
+            error => {
+                this.settingsService.showError("Error while storing data!");
+                // console.error('Error while storing data', error);
+                this.toast.show(`Error while storing data!`, '5000', 'center').subscribe(toast => {});
+            });
+        }
     }
+
+
 }

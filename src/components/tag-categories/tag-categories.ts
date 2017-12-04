@@ -24,8 +24,8 @@ export class TagCategoriesComponent {
         .then((categories) => this.categories = categories);
   }
 
-  learn() {
-    this.navCtrl.push(GamePage, { val: 1 })
+  learn(id: number) {
+     this.navCtrl.push(GamePage, { val: id })
   }
 
 }

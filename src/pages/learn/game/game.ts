@@ -8,12 +8,14 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class GamePage {
   showGame: boolean = false;
+  categoryId: number = 0;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.categoryId = this.navParams.get('val');
   }
 
   ionViewDidLoad() {
-    //console.log('ionViewDidLoad GamePage');
+
   }
 
   onChanged(val: boolean){

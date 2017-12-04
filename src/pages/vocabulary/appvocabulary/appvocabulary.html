@@ -9,8 +9,15 @@
 
 <ion-content padding>
 
-  <div *ngFor='let w of words; trackBy: category;'>
-     {{ w.text }} - {{ w.translation }}
-  </div>
+  <ion-item padding>
+    <ion-icon name="search"></ion-icon>
+    <ion-input type="text" placeholder="search item" (keyup)="search($event.target.value)"></ion-input>
+  </ion-item>
+
+  <ion-item padding>
+    <div *ngFor='let w of wordsEdt'>
+       {{ w.text }} - {{ w.translation }}
+    </div>
+  </ion-item>
 
 </ion-content>

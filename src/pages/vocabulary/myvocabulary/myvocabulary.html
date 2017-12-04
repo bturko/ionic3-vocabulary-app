@@ -12,12 +12,15 @@
     <button ion-fab color="danger" (click)="openModal({charNum: 0})"><ion-icon name="add"></ion-icon></button>
   </ion-fab>
 
-  <ion-item>
-    <ion-input type="text" placeholder="search item" (keyup)="search($event.target.value)"></ion-input>
+  <ion-item padding>
+    <ion-icon name="search"></ion-icon>
+    <ion-input type="text" placeholder="search item" (keyup)="search($event.target.value)">s</ion-input>
   </ion-item>
 
-  <div *ngFor='let w of wordsEdt'>
-    {{ w.text }} - {{ w.translation }}
-  </div>
+  <ion-item padding>
+    <div *ngFor='let w of wordsEdt'>
+      {{ w.text }} - {{ w.translation }}
+    </div>
+  </ion-item>
 
 </ion-content>

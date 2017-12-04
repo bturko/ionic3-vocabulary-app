@@ -18,7 +18,8 @@ import { IUser }            from "../../../shared/interfaces/user.interface";
   templateUrl: 'myvocabulary.html'
 })
 export class MyVocabularyPage {
-  words: IWord[];
+  words: IWord[]; // all words
+  wordsEdt: IWord[]; // filtered words
   user: IUser;
   searchFilter = "";
 
@@ -76,8 +77,4 @@ export class MyVocabularyPage {
     this.wordsEdt = this.words.filter(w => w.text.indexOf(val) >= 0);
   }
 
-
 }
-
-
-

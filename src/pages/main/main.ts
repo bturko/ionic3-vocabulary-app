@@ -6,7 +6,9 @@ import { VocabularyPage }           from '../vocabulary/vocabulary';
 import { LearnPage }                from '../learn/learn';
 import { InAppBrowser,
          InAppBrowserOptions }      from '@ionic-native/in-app-browser';
+import { NativeStorage }            from "@ionic-native/native-storage";
 import { SplashScreen }             from '@ionic-native/splash-screen';
+import { Toast }                    from '@ionic-native/toast'
 import { SettingsService }          from "../../shared/services/settings.service";
 import { StoreService }             from "../../shared/services/store.service";
 import { UserService }              from "../../shared/services/user.service";
@@ -36,17 +38,22 @@ export class MainPage {
       private userService: UserService,
       private storeService: StoreService,
       private splashScreen: SplashScreen,
-      private plt: Platform
+      private nativeStorage: NativeStorage,
+      private plt: Platform,
+      private toast: Toast
   ) {
-      this.user = localStorage.setItem("user", {}) //!!!!!!!!!!!!!!!!!
-      this.plt.ready().then((source) => {
-          this.storeService = storeService;
-          this.userService = userService;
+      this.storeService = storeService;
+      this.userService = userService;
+      this.nativeStorage = nativeStorage;
+      this.toast = toast;
+      //localStorage.setItem("user", JSON.stringify(new User()) );
+      this.plt.ready().then((source: string) => {
           this.menuItems = settingsService.menuItems();
           this.browser = settingsService.browserOptions;
 
           // splashscreen & load data
-          if (source == Platforms.Android) {
+          //alert(source)
+          if (source == Platforms.Android || source == Platforms.Cordova) {
               //this.settingsService.getPlatform();
               this.splashScreen.show();
               setTimeout(() => this.splashScreen.hide(), 2000);
@@ -65,14 +72,16 @@ export class MainPage {
               );
           }
           else{
-              this.user = localStorage.getItem("user")
-              if(!this.user.wordsLevel && !this.user.baseExperience) {
+              this.user = JSON.parse(localStorage.getItem("user"));
+              if(!this.user) {
                   this.user = new User();
                   console.error("Getting local stored data error!", this.user);
               }
           }
+          console.log('user', this.user);
           this.userService.user = this.user;
-          console.log('uService', this.userService.user)
+          this.storeService.saveUserData(this.user);
+          console.log('uService', this.userService.user);
       });
 
  }
