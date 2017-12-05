@@ -34,10 +34,12 @@ export class LearnPage {
   ){
     this.wordsService = wordsService;
     this.wordsService.initWords();
+    this.storeService.initStore();
   }
 
   ionViewDidLoad() {
     this.user = this.userService.user;
+    console.log('learn', this.user)
     this.getData();
   }
 
@@ -52,7 +54,7 @@ export class LearnPage {
   testRadioResult;
 
   nextScript(){
-    this.user.scriptId = this.user.scriptId = ++this.user.scriptId ;
+    this.user.scriptId = this.user.scriptId = ++this.user.scriptId;
 
     switch (this.user.scriptId){
       case 1:
@@ -69,39 +71,28 @@ export class LearnPage {
   }
 
   doRadio() {
+    this.storeService.loadUserData().then((user) => {
+      this.user = user;
+      console.log('do',this.user)
+      if(this.user.baseExperience < 1) this.askLevel();
+    });
+  }
+
+  askLevel(){
     let alert = this.alerCtrl.create();
     alert.setTitle('Выберите свой уровень знания английского');
-
     alert.addInput({
-      type: 'radio',
-      label: 'Новичек',
-      value: '0',
-      checked: true
-    });
-
-    alert.addInput({
-      type: 'radio',
-      label: 'Знаю слабо',
-      value: '1'
-    });
-
-    alert.addInput({
-      type: 'radio',
-      label: 'Знаю хорошо',
-      value: '2'
-    });
-
-    alert.addInput({
-      type: 'radio',
-      label: 'Профи',
-      value: '3'
-    });
-
+      type: 'radio', label: 'Новичек', value: 1, checked: true});
+    alert.addInput({type: 'radio', label: 'Знаю слабо', value: 2});
+    alert.addInput({type: 'radio', label: 'Знаю хорошо', value: 3});
+    alert.addInput({type: 'radio', label: 'Профи', value: 4});
     alert.addButton({
       text: 'Отмена',
       handler: data => {
-        this.navCtrl.push(MainPage, { })
-        //this.user.baseExperience = data;
+        this.navCtrl.push(MainPage, {});
+        this.user.baseExperience = data;
+        this.userService.user.baseExperience = data;
+        this.storeService.saveUserData(this.user)
         //this.user.scriptId = this.userServ.setScriptId( this.user.scriptId++ );
       }
     });
@@ -114,9 +105,7 @@ export class LearnPage {
       }
     });
 
-    alert.present().then(() => {
-      this.testRadioOpen = true;
-    });
+    alert.present().then(() => { this.testRadioOpen = true; })
   }
 
 }

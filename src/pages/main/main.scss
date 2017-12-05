@@ -1,4 +1,4 @@
-page-posts {
+/*page-posts {
   .content {
     background-color: #f4f4f7;
   }
@@ -61,10 +61,10 @@ page-posts {
 }
 
 
-
+*/
 
 .card-background-page {
-
+/*
   ion-card {
     position: relative;
     text-align: center;
@@ -86,5 +86,11 @@ page-posts {
     width: 100%;
     color: #fff;
   }
+*/
+}
 
+.center {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }

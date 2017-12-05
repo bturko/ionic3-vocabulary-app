@@ -4,7 +4,7 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>
-      {{ subreddit ? '/r/' + subreddit : 'Твой Английский Словарь' }}
+      {{ title }}
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -12,17 +12,16 @@
 
 <ion-menu class="side-menu" type="overlay" [content]="postsList">
 
-
   <ion-header>
     <ion-toolbar color="primary">
-      <ion-title>Choose</ion-title>
+      <ion-title>Меню</ion-title>
     </ion-toolbar>
   </ion-header>
 
   <ion-content>
     <ion-item>
       <ion-avatar item-left>
-        <ion-img [src]="image"></ion-img>
+        <ion-img [src]="image" class="center"></ion-img>
       </ion-avatar>
     </ion-item>
   </ion-content>

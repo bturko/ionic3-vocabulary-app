@@ -14,7 +14,6 @@ import { StoreService }             from "../../shared/services/store.service";
 import { UserService }              from "../../shared/services/user.service";
 import { Platforms }                from "../../shared/enums/platforms.enum";
 import { IUser }                    from "../../shared/interfaces/user.interface";
-import { User }                     from "../../shared/types/user.type";
 
 
 @Component({
@@ -28,7 +27,8 @@ export class MainPage {
   platform: number;
   options : InAppBrowserOptions;
   user: IUser;
-  image: string = '../assets/imgs/logo.png';
+  image: string = '../../assets/imgs/logo.png';
+  title: string = 'Твой Английский Словарь';
 
   constructor(
       public navCtrl: NavController,
@@ -52,14 +52,13 @@ export class MainPage {
           this.browser = settingsService.browserOptions;
 
           // splashscreen & load data
-          //alert(source)
           if (source == Platforms.Android || source == Platforms.Cordova) {
               //this.settingsService.getPlatform();
               this.splashScreen.show();
               setTimeout(() => this.splashScreen.hide(), 2000);
               this.nativeStorage.getItem('user')
                   .then(store => {
-                      this.settingsService.showMessage("Stored loaded!")
+                      this.settingsService.showMessage("Stored loaded!");
                       console.log('Stored loaded!', store)
                       this.user = store;
                       this.toast.show(`Stored loaded!`, '5000', 'center').subscribe(toast => {});
@@ -74,8 +73,13 @@ export class MainPage {
           else{
               this.user = JSON.parse(localStorage.getItem("user"));
               if(!this.user) {
-                  this.user = new User();
-                  console.error("Getting local stored data error!", this.user);
+                  this.user = {};
+                  this.user.availableCategories = [];
+                  this.user.scriptId = 0;
+                  this.user.wordsLevel = 1;
+                  this.user.customWords = [];
+                  this.user.baseExperience = 0;
+                  console.info("No local data! Init user", this.user);
               }
           }
           console.log('user', this.user);

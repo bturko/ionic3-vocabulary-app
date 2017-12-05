@@ -11,11 +11,10 @@ export class UserService {
         /* TODO: all below will be getting from storage: */
         this._user.wordsLevel = 1;
         this._user.scriptId = 0;
-        this._user.baseExperience = 1;
+        this._user.baseExperience = 0;
         this._user.availableCategories = [1];
         this._user.customWords = [];
     }
-
 
     public get user(): IUser {
         return this._user;
@@ -24,5 +23,4 @@ export class UserService {
     public set user(user: IUser) {
         this._user = user;
     }
-
 }

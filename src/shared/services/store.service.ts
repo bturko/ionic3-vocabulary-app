@@ -1,10 +1,11 @@
 import { Injectable }      from '@angular/core';
-//import { IStore }          from "../interfaces/store.interface";
 import { SettingsService } from './settings.service'
 import { NativeStorage }   from '@ionic-native/native-storage';
 import { Toast }           from '@ionic-native/toast';
 import { Platform }        from 'ionic-angular';
 import { IUser }           from "../interfaces/user.interface";
+import { Platforms }       from "../enums/platforms.enum";
+
 
 @Injectable()
 export class StoreService {
@@ -18,13 +19,17 @@ export class StoreService {
         private toast: Toast
     ) {
         this.settingsService = settingsService;
-        platform.ready().then((source) => {
+        this.platform = platform;
+    }
+
+    initStore(): void{
+        this.platform.ready().then((source) => {
             this.platformName = source;
         });
     }
 
-    /*loadUserData(): Promise<IUser> {
-        if(this.platformName=="dom"){
+    loadUserData(): Promise<IUser> {
+        if(this.platformName == Platforms.Web){
             return new Promise((resolve)=>resolve(localStorage.getItem("user")))
         }
         else{
@@ -43,11 +48,8 @@ export class StoreService {
                     }
                 );
         }
-
-
         //return store; //TODO: not good!
-
-    }*/
+    }
 
     saveUserData(user: IUser) {
         if (!this.platform.is('android')) {
@@ -67,11 +69,9 @@ export class StoreService {
             },
             error => {
                 this.settingsService.showError("Error while storing data!");
-                // console.error('Error while storing data', error);
                 this.toast.show(`Error while storing data!`, '5000', 'center').subscribe(toast => {});
             });
         }
     }
-
 
 }
